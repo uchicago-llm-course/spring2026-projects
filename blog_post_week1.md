@@ -57,11 +57,11 @@ None of this was supposed to take this long. Getting these experiments running o
 
 **2. Docker APT hell.** The `nvidia/cuda:12.4.1-devel-ubuntu22.04` base image locks the CUDA version to 12.4, but `apt-get install libnccl-dev=2.21.*` resolved to the `+cuda12.5` variant — a strict dependency mismatch that made the entire container unbuildable. Fix: pin explicitly to `libnccl2=2.21.5-1+cuda12.4`.
 
-**3. Modal API churn.** Upgrading to `modal 1.4.1` broke three separate things: `modal.Mount` was removed in favor of `context_dir`; `_allow_background_volume_commits` was removed; `VOLUME` instructions in Dockerfiles are unsupported. Each required a targeted fix.
+**3. Modal API trouble.** Upgrading to `modal 1.4.1` broke three separate things: `modal.Mount` was removed in favor of `context_dir`; `_allow_background_volume_commits` was removed; `VOLUME` instructions in Dockerfiles are unsupported. Each required a targeted fix.
 
 **4. The ENTRYPOINT hijack.** The most insidious bug: `ENTRYPOINT ["pg-train"]` in the Dockerfile overrode Modal's Python process entrypoint. Instead of running `gemm_bench()`, Modal would boot the container, which immediately started `pg-train`, ran one step (loss 6.9316 — correctly initialized, at least), and exited. Modal correctly reported "container exited successfully but never requested inputs." One step of training on H100 took 732 seconds in "elapsed time" — entirely startup overhead, zero actual compute. Removing the ENTRYPOINT instruction fixed this. 
 
-On the bright side: the accidental `pg-train` run confirmed that our model initializes correctly. `loss 6.9316 ≈ -ln(1/1024) = ln(1024)` is exactly the expected cross-entropy for uniform random predictions over a 1024-token vocabulary. The math is right.
+the accidental `pg-train` run confirmed that our model initializes correctly. `loss 6.9316 ≈ -ln(1/1024) = ln(1024)` is exactly the expected cross-entropy for uniform random predictions over a 1024-token vocabulary. This gives us assurance that the math is right.
 
 ## Plans for Next Week
 
