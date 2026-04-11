@@ -1,10 +1,10 @@
 # Copy Task Transformer Comparison
 
-`copy_task_transformer_comparison.ipynb` studies a continuous copy task: the model sees a short sequence of vectors, then a delimiter and a delay, and must reproduce the original vectors at the end. In this notebook each example uses `d=8`, `L=10`, and `D=3`, so the total sequence length is `T = 2L + D + 1 = 24`. The input has shape `(T, d + 1)`: the first 10 steps contain random vectors, the next step is a delimiter, and the remaining steps are blanks marked by a control channel. The target is zero everywhere except the final 10 positions, where the original 10 vectors must be copied back out. Training uses masked MSE only on those final output positions.
+In this experiment, we test the compressed attention's performance against a plain transformer on a continuous copy task: the model sees a short sequence of vectors, then a delimiter and a delay, and must reproduce the original vectors at the end. Each example uses `d=8`, `L=10`, and `D=3`, so the total sequence length is `T = 2L + D + 1 = 24`. The input has shape `(T, d + 1)`: the first 10 steps contain random vectors, the next step is a delimiter, and the remaining steps are blanks marked by a control channel. The target is zero everywhere except the final 10 positions, where the original 10 vectors must be copied back out. Training uses masked MSE only on those final output positions.
 
-## From Local Forgetting to Global Forgetting
+## From Local Forgetting to Global Forgetting (Modification of compression mechanism from proposal)
 
-Assuming the local forgetting architecture is already familiar, the main change is that forgetting is no longer applied independently inside each block pair. In the local version, each block pair `(p, q)` carries its own scalar recurrent state and updates only from its own streamed scores. In the global version, the full `B x B` block-score grid is flattened into one per-head state vector and updated jointly with learned global linear maps for the candidate, forget gate, and input gate. That means each streamed score can influence the whole compressed attention state rather than only its own block. The rest of the pipeline stays the same: after streaming, the model masks future blocks, applies a softmax over block scores, and uses those weights to mix block-level values.
+Assuming the local forgetting architecture is already familiar (from the proposal), the main change is that forgetting is no longer applied independently inside each block pair. In the local version, each block pair `(p, q)` carries its own scalar recurrent state and updates only from its own streamed scores. In the global version, the full `B x B` block-score grid is flattened into one per-head state vector and updated jointly with learned global linear maps for the candidate, forget gate, and input gate. That means each streamed score can influence the whole compressed attention state rather than only its own block. The rest of the pipeline stays the same: after streaming, the model masks future blocks, applies a softmax over block scores, and uses those weights to mix block-level values.
 
 ## Global Update Equations
 
@@ -33,17 +33,17 @@ All runs share the same backbone and optimization settings:
 
 The plain transformer uses full attention with `795,656` parameters.
 
-The global forgetting transformer keeps the same outer transformer shape but replaces full attention with blockwise compressed attention using `block_size=6` and `strict_causal=False`. With `T=24`, that means each sequence is divided into `4` blocks. This model has `846,856` parameters.
+The global forgetting transformer keeps the same outer transformer shape but replaces full attention with blockwise compressed attention using `block_size=6` (which results in 36X compression of the attention matrix) and `strict_causal=False`. With `T=24`, that means each sequence is divided into `4` blocks.
 
 For reference, the local forgetting model in the notebook uses the same `block_size=6` and `strict_causal=False` setting, so the main comparison is between local per-block updates and global coupled updates under the same compression level.
 
 ## Results
 
-| Model | Parameters | Best val MSE | Eval MSE |
-| --- | ---: | ---: | ---: |
-| Plain Transformer | 795,656 | `1.35e-05` | `1.19e-04` |
-| Local Forgetting | 795,800 | `7.60e-04` | `1.19e-03` |
-| Global Forgetting | 846,856 | `6.08e-04` | `6.74e-04` |
+| Model | Best val MSE | Eval MSE |
+| --- | ---: | ---: |
+| Plain Transformer | `1.35e-05` | `1.19e-04` |
+| Local Forgetting | `7.60e-04` | `1.19e-03` |
+| Global Forgetting | `6.08e-04` | `6.74e-04` |
 
 Two patterns stand out. First, the plain transformer is still the strongest model by a clear margin and reaches very low loss almost immediately. Full attention is simply the easiest setting for this task. Second, among the compressed models, global forgetting is clearly better than local forgetting. It lowers the best validation MSE from `7.60e-04` to `6.08e-04`, and it cuts evaluation MSE from `1.19e-03` to `6.74e-04`.
 
@@ -53,6 +53,5 @@ The loss curves tell the same story. Local forgetting improves steadily but slow
 
 ![Loss curves for the plain transformer, local forgetting, and global forgetting models](assets/copy_task_loss_curves_combined.png)
 
-## Next Steps
-
+## Results
 The next experiment I would like to try out is a simple language modeling task with the dataset WikiText-2. I will conduct next token prediction and compare the results between the plain uncompressed model and the compressed model. Metrics that will be assesed are CE-Loss and Perplexity.
