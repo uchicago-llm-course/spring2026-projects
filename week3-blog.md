@@ -52,11 +52,11 @@ Two-part code generation architecture:
 2. **Verified**: generate → check with rust-analyzer native diagnostics → if errors, retry with diagnostic feedback (up to 3 retries).
 3. **Compile-retry**: generate → compile with `rustc` → if errors, retry with compiler error feedback (up to 3 retries).
 
-**Metrics:** compilation rate, pass@1, rollback count, avg attempts, wall-clock time.
+**Metrics:** compilation rate, pass@1, retry count, avg attempts, wall-clock time.
 
 ### Results
 
-| Model | Mode | Compile | Pass@1 | Rollbacks | Avg Att | Time |
+| Model | Mode | Compile | Pass@1 | Retries | Avg Att | Time |
 |---|---|---|---|---|---|---|
 | qwen3.5:0.8b | baseline | 36.5% | 9.6% | 0 | 1.00 | 99s |
 | qwen3.5:0.8b | lsp | 38.5% | 6.4% | 6 | 1.04 | 562s |
@@ -73,14 +73,14 @@ Two-part code generation architecture:
 ### Key Findings
 
 **1. Compile-retry significantly improves compilation rate across model sizes.**
-- qwen3.5:0.8b: 36.5% → 53.8% (+17.3pp, 331 rollbacks, 2.66 avg attempts)
-- qwen3.5:9b: 71.8% → 84.0% (+12.2pp, 124 rollbacks, 1.63 avg attempts)
+- qwen3.5:0.8b: 36.5% → 53.8% (+17.3pp, 331 retries, 2.66 avg attempts)
+- qwen3.5:9b: 71.8% → 84.0% (+12.2pp, 124 retries, 1.63 avg attempts)
 - Pass@1 also improves: 0.8B 9.6%→13.5% (+3.9pp), 9B 49.4%→51.3% (+1.9pp)
 - The improvement is largest for weaker models (more errors, more retries)
 
 **2. rust-analyzer native diagnostics are insufficient for function-level verification.**
 - Native pull diagnostics (`textDocument/diagnostic`) miss most errors: borrow checker (E0382), complex trait bounds (E0277), and many type mismatches
-- Only 0-6 rollbacks across all models in lsp mode vs. 124 in compiler for 9B
+- Only 0-6 retries across all models in lsp mode vs. 124 in compiler for 9B
 - This is a known limitation: native diagnostics don't include the borrow checker or full type inference — those require `cargo check` / `rustc`
 
 **3. Compile-retry has diminishing — then negative — returns at scale.**
