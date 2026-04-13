@@ -23,7 +23,7 @@ A Koopman Autoencoder, as introduced by Aswani and Jabari (2025), consists of th
 2. A learnable matrix $K$ that serves as the **approximated Koopman operator** acting on the lifted, linear dynamics.
 3. A **decoder** $\psi: \mathbb{R}^m \rightarrow \mathbb{R}^{Wd}$ that reconstructs the Hankel window states.
 
-![Koopman Autoencoder diagram](media/image1.png)
+![Koopman Autoencoder diagram](image1.png)
 
 The model is trained by minimizing a combined objective:
 
