@@ -6,7 +6,7 @@ This week's progress:
 - Re-examined the Latent Spectral Dynamics framework to clarify its interpretability limits.
 - Designed a more robust experimental setting for upcoming tasks.
 
-Recall that the core motivation for this project is to evaluate a general dynamical systems perspective of LLM token-wise activation trajectories. Currently, most mechanistic interpretability methods focus on static snapshots of individual layers. To use a neuroscientific analogy: early researchers studied the brain by looking at static snapshots of neurons to see how they represented single concepts. Later, dynamical systems theory was introduced, offering a way to look at how the brain's state evolves over time.
+Recall that the core motivation for this project is to **evaluate a general dynamical systems perspective of LLM token-wise activation trajectories**. Currently, most mechanistic interpretability methods focus on static snapshots of individual layers. To use a neuroscientific analogy: early researchers studied the brain by looking at static snapshots of neurons to see how they represented single concepts. Later, dynamical systems theory was introduced, offering a way to look at how the brain's state evolves over time.
 
 By viewing LLM activation space as a dynamical system, we gain a lens into the evolutionary rules and global properties of the model's reasoning. It allows us to ask: do the reasoning trajectories of one generative regime (e.g., honest) systematically differ from another (e.g., deceptive)? This is what the original Latent Spectral Dynamics paper set out to investigate.
 
@@ -49,7 +49,7 @@ While the KAE successfully predicts trajectory rollouts, an analysis of the lear
 
 ## 3. Re-evaluating Latent Spectral Dynamics
 
-This raises natural questions: What does this Koopman Autoencoder actually reveal about interpretability? Does the operator fitting persist in other prompting setups?
+This raises natural questions: **What does this Koopman Autoencoder actually reveal about interpretability? Does the operator fitting persist in other prompting setups**?
 
 A closer examination of the key objects clarifies our limits and capabilities:
 
@@ -83,12 +83,12 @@ With $r=64$, $W=8$, $N=8$, current results from GSM8K suggest a stable fitting o
 | 4       |     0.423 |   0.514 |    0.548 |
 | 8       |     0.481 |   0.686 |    0.727 |
 
-The model achieves a strong Test MSE of 0.481 at a 1-step horizon, gracefully degrading to 0.727 at an 8-step horizon. This confirms that a stable, linear governing operator $K$ can be found for token-wise mathematical reasoning trajectories.
+The model achieves a strong Test MSE of 0.481 at a 1-step horizon, gracefully degrading to 0.727 at an 8-step horizon. **This confirms that a stable, linear governing operator $K$ can be found for token-wise mathematical reasoning trajectories.**
 
 Tracing multi-step reasoning tasks may reveal more dynamical properties, but to ensure we find meaningful spectral differences, I will use a contrastive setup. Rather than just fitting $K$ to all of GSM8K, I will partition the data into trajectories where the model does Fluent Execution vs. Self-correction, algorithmic execution vs. semantic retrieval, etc.
 
 ## 5. Next Steps: Faithful Interpretation and Strategic Deception?
 
-The biggest challenge of this project remains the faithfulness of interpreting this complicated mathematical machinery. Through causal ablation tests in the Koopman eigenbasis, I hope to anchor these spectral signatures to truly interpretable model behaviors. I will investigate further methods to unlock interpretable features from LLM generation using this autoencoder formulation.
+The biggest challenge of this project remains **the faithfulness of interpreting this complicated mathematical machinery**. Through causal ablation tests in the Koopman eigenbasis, I hope to anchor these spectral signatures to truly interpretable model behaviors. I will investigate further methods to unlock interpretable features from LLM generation using this autoencoder formulation.
 
 Once the math experiments are complete, I will decide whether to move to strategic deception or not. I realize that strategic deception is one of the most complicated tasks to handle because it is ill-defined and difficult to detect. To mitigate this, I plan to leverage pre-existing, validated datasets (like Anthropic's Alignment Faking or Sleeper Agents prompts) to ground the behavior before tracking its dynamics.
