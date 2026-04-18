@@ -69,6 +69,8 @@ Wiring both fixes in meant more than a config change.
 
 The three Phase 1 configs pin *matching* Alice/Bob temperatures across D and C — both at the Phase 0a winner (0.6, 1.0) — so the discussion-vs-compute-control comparison stays clean. All three load the same curriculum filter.
 
+Before queuing the real runs I did a 3-iteration smoke pass on 2×H100 to confirm the rebuild runs end-to-end: cosine LR stepping per iter, curriculum filter gating the sampler to the 543-problem set, all three JSONL streams writing under `<checkpoint_dir>/metrics/`, and the disagreement-case recorder classifying cases through the sympy verifier. No crashes, no silent no-ops. Integration works — whether the new setup actually *trains* better is what Phase 1 will tell me.
+
 ## Phase 2: Fixing the Behavioral Metrics
 
 Last blog flagged three methodology issues in the non-accuracy metrics. Two are getting fixed; one got dropped.
