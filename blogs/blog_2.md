@@ -24,7 +24,12 @@ The result? The model consistently categorizes images posted by Democrats and Re
 
 When plotting the aggregate scores, we found a strong correlation (Pearson $r = 0.58$) between the actual DW-NOMINATE ideology score of the politician who posted the image, and the average "probe score" of the image itself. The model seems able to extract political ideology natively from the visual aesthetics, subject matter, and framing choices prevalent in partisan Twitter posts. An immediate follow-up question is to understand what is the model capturing as evidence for political ideology in these images.
 
-Parallel to our Twitter findings, we also fed the model tightly-cropped Congressional member portraits and mapped them using the textual probe. We found that the model predictably assigns higher ideological probe scores to Republican faces than Democrat faces.
+Parallel to our Twitter findings, we also fed the model tightly-cropped Congressional member portraits (550 images from the 116th Congress) and mapped them using the textual probe. We found that the model predictably assigns higher ideological probe scores to Republican faces than Democrat faces.
+
+![Example Portrait B001281](./images/B001281.jpg)
+![Example Portrait B001282](./images/B001282.jpg)
+
+*Example of portraits of two politicians, Alexandria Joyce Beatty (Democrat) and Andy Barr (Republican), from the 116th Congress.*
 
 ![Coloring Portraits Based on Textual Probe](./images/coloring_portraits_textual_probe.png)
 
