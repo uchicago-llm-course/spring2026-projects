@@ -1,4 +1,4 @@
-# Week 2: Finding the Ceiling and Understanding the Gap (Apr 17, 2026)
+# Finding the Ceiling and Understanding the Gap (Apr 17, 2026)
 
 ## Recap
 
