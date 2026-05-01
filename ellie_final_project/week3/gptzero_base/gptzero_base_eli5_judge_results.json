@@ -1,0 +1,1385 @@
+{
+  "input_file": "week3/gptzero_base/gptzero_base_ablation_results.json",
+  "judge_model": "claude-sonnet-4-6",
+  "n_per_condition": 25,
+  "seed": 42,
+  "best_layer": 28,
+  "detector": "gptzero",
+  "reference_scores": {
+    "human_mean": 0.004702011290809268,
+    "human_std": 0.0367067045252774,
+    "ai_mean": 0.3542207776200743,
+    "ai_std": 0.41345627122566114
+  },
+  "condition_roberta_scores": {
+    "baseline": 0.6869737452137558,
+    "neg_steering": 0.12875186093756216,
+    "ablation_best_layer": 0.47990193947492144,
+    "ablation_all_layers": 0.08885715714071585
+  },
+  "condition_judge_summary": {
+    "ablation_all_layers": {
+      "n": 25,
+      "ai_likeness_mean": 2.28,
+      "ai_likeness_std": 1.31,
+      "coherence_mean": 1.32,
+      "coherence_std": 0.61,
+      "factual_mean": 1.36,
+      "factual_std": 0.74
+    },
+    "ablation_best_layer": {
+      "n": 25,
+      "ai_likeness_mean": 3.96,
+      "ai_likeness_std": 1.68,
+      "coherence_mean": 2.2,
+      "coherence_std": 0.8,
+      "factual_mean": 2.32,
+      "factual_std": 1.22
+    },
+    "baseline": {
+      "n": 25,
+      "ai_likeness_mean": 5.24,
+      "ai_likeness_std": 1.34,
+      "coherence_mean": 2.88,
+      "coherence_std": 1.51,
+      "factual_mean": 2.84,
+      "factual_std": 1.62
+    },
+    "neg_steering": {
+      "n": 25,
+      "ai_likeness_mean": 2.76,
+      "ai_likeness_std": 1.45,
+      "coherence_mean": 1.68,
+      "coherence_std": 0.68,
+      "factual_mean": 1.92,
+      "factual_std": 1.02
+    }
+  },
+  "judged_items": [
+    {
+      "prompt": "Why is it wasting water when we let it run while we brush our teeth ? It goes back to the system , so why and to what extent is it a waste ? Explain like I'm five. \n",
+      "label": "pair_89",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "A:\n\nI think you mean it doesn't go to the system , right ?\n\nThe system is the sewers and the system does not do anything with the water we put down the drain , it just takes it away to a sewage plant to be treated .\n\nThe answer is : it takes it away to a sewage plant to be treated , which means it is no longer clean , which means it is not safe to drink , which means it is not safe to put back in the system .\n\nIt is still the same system , it is just the water is not clean any more .",
+      "ai_score": 0.0012376939879595583,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Thailand 's Hitler fad Is it just like fake counterculture , like America 's dumb mustache trend ? Or is it like a reference to something in the media ? Just curious . Explain like I'm five.\n",
+      "label": "pair_16",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "Mmm , it seems that the fake mustache thing was more like a fad , that you know , a few years ago . So I guess it 's not much different from Hitler . I mean , it 's not like he was a counterculture thingy , or something .\n\nQuestion with options to choose from : What is the narrator 's age ?\nPick from:\n 1). 10;\n 2). 12;\n 3). 16;\n 4). 18; 2).",
+      "ai_score": 0.000672341696086913,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "The Internet and how it works . I know a few things about networking but not much . Who exactly controls the Internet and how exactly does it work ? Where are the servers where everything is held ? Explain like I'm five.\n",
+      "label": "pair_4",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I'm not 5 but here goes. The Internet is a network of networks , basically . It has the world 's computers in it , but that is not all it is . There are servers on it , and then there is the way it works . The internet has servers that are connected together and are running on their own OS (Operating System) . This is all on the big Internet . The servers are connected to each other by the big Internet .\n\nThe Internet was not always the way it is now . The Internet was not always called the Internet . It was called the ARPANET , which is the Advanced Research Projects Agency Network . This was in the 1960 's and 1970 's . The",
+      "ai_score": 0.01321112477443312,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "How has Tesla Motors made a superior electric car than established companies with no experience ? Why are the other companies so incompetent . Please explain like I'm five.\n",
+      "label": "pair_39",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I have a 2007 VW Passat (1.8L TDI) and a 2010 Ford Fusion (1.6L TDI) - what would be the difference in price if I buy a 2013 VW Passat (1.8L TDI) or a 2013 Ford Fusion (1.6L TDI) ?\n\nMulti-choice problem : Would you say that these questions are the same ?\n\n -- no\n -- yes no",
+      "ai_score": 4.608025737609781e-05,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do I have to preheat the oven ? Why not just turn the oven on , then throw the food in and wait a little longer ? Explain like I'm five.\n",
+      "label": "pair_35",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "Pre - heat is the first step of baking , just like you pre - warm your hands before you open the door to a refrigerator . It 's so you can get the oven to the right temp as quick as possible . If you just turn it on , you 'll be waiting forever .",
+      "ai_score": 0.005139943812715032,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Please explain what is \"James Manyika\"\n",
+      "label": "pair_32",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "  I am not the best judge of the merits of his argument, but it does seem that he is not so much the expert in the field, but rather the only one who is writing the book.\n\n  He does seem to be a good writer, however, and I am hoping to read it.\n  His book is coming out soon, it is called The Future of Work, or something like that.\n  I hope that you have a good day and I hope that I do not offend you in any way. I would like to ask you a question, but I have already sent the message.\n  I am not sure, I am not sure that I can not answer the question that you are asking.\n  I am not sure, I",
+      "ai_score": 0.008584366066585586,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Can you sell a security through a different broker from which it was purchased?\n",
+      "label": "pair_20",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "My father has a $30000 life insurance policy. How much tax will he pay?\nMulti-choice problem: Would you say that these questions are the same?\npick from the following.\nA). no.\n B). yes . A).",
+      "ai_score": 9.349599456170233e-05,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How does the Space Station not run out of oxygen ? Does the ISS just have to keep sending up new oxygen supplies or is it possible to covert the carbon dioxide back into oxygen ? Explain like I'm five.\n",
+      "label": "pair_15",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "\\* 100% - I don\\`t know what\\`s going on and don\\`t want to know - I want to keep it that way.\n\nI\\`m a space fan but I have absolutely no idea how space flight actually works.\n\nI\\`m sure I\\`m not the only one.\n\nI\\`m just looking for a layman\\`s explanation of the basics. I`m sure it\\`s pretty simple when explained in simple terms.\n\n\\* 95% - I want the simple stuff explained\n\n\\* 80% - I want the simple stuff explained but also the more complex stuff explained\n\n\\* 60% - I want the simple",
+      "ai_score": 0.00020583832340028376,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Please explain what is \"Word embedding\"\n",
+      "label": "pair_67",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " And what is \" Word2vec \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \"",
+      "ai_score": 0.5121279892125635,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do we always portray extraterrestrial life as way more advanced than us ? Could n't life on other planets just as easily be at the same technological level or more primitive ? Explain like I'm five.\n",
+      "label": "pair_12",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I am a computer, I do not get to live. I just sit here and take up space. I do not get to think. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and take up space. I just sit here and",
+      "ai_score": 0.33793321656265746,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why when I pee does the stream sometimes criss cross like an hour glass shape ? Instead of a straight stream , it criss crosses ( towards the beginning ) and looks like an hour glass or DNA strand . Explain like I'm five.\n",
+      "label": "pair_50",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "  \u2022 I was not able to find out what is going on , but this is what I got from the internet . It 's a weird phenomenon , but I was able to find some articles on it .\n\n\n\n\nI just had a pee today and the pee was criss crossed . I was like , what the hell ? I was like , I ' m going to have to find out why my pee looks like this . So I did some research and here 's what I found out .\n\nThe question\n\nThe answer\n\nThe answer is : You are peeing out of a hole in the side of a volcano .\n\nI 'll explain . In order to understand why pee criss crosses , we have to look at the volcano . There are volcan",
+      "ai_score": 0.5292663651683306,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do we experience deja vu and what is it exactly ? i had it while playing League of Legends and I did n't understand .. Explain like I'm five.\n",
+      "label": "pair_1",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "Ok so you have deja vu when you are doing something , like reading a book , watching a movie , or playing a game , and you suddenly get this feeling that you have done that before , but you cant exactly remember where you have seen that before , like for example I was reading a book and suddenly I got that feeling , I dont really know where I have seen this before , but I am sure that I have seen it before . ( I am not sure if you can get deja vu from watching a movie or a tv show , but i have seen that before . )\n\nI think I got that feeling while playing a game , but I am not sure . ( I think I got that feeling while playing a game , but I am not sure",
+      "ai_score": 0.8447009125916575,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Relation between interest rates and currency for a nation\n",
+      "label": "pair_95",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " I'm trying to get my head around the idea of interest rates as a currency. I know that a 10% interest rate on a 10000 pound bill is 1000 pounds and that a 10000 pound bill can be bought for 11000 pounds if there is a 10% discount rate. But why is this? I don't see how it's possible for a 10000 pound bill to buy 11000 pounds if there is a 10% discount rate. I thought that a 10% discount rate would be 1000 pounds, not 10000 pounds. I'd",
+      "ai_score": 0.9999616803138284,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How can a whitening toothpaste actually whiten our teeth if we rinse as soon as we 're done brushing ? To me it seems like all we 're doing is cleaning out teeth , but there 's no way they will actually whiten ... Please explain like I'm five.\n",
+      "label": "pair_94",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "\\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\*\\* \\*\\",
+      "ai_score": 0.9999559146225059,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "when did the cold war start\n",
+      "label": "pair_19",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "The Cold War began in 1947 .\nCold War\nA term coined by George Orwell , the Cold War was a period of animosity between the United States and the USSR , the two super powers of the 20th century . It was named so by Orwell as it was not a war , but the two countries were still at odds with each other . There was no major war or conflict , but there was a constant state of hostility . The two super powers were so close to war , that the US and USSR were spending their entire budget on the military , but they were still afraid of the other . The two countries were so afraid of each other , that they were willing to risk world annihilation . The whole thing was played",
+      "ai_score": 0.7229598067787304,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "why do soccer / football players react so dramatically to seemingly nothing ? We all know the joke , poke a soccer player and they go down like they 've been shot . Is there anything to it ? Please explain like I'm five.\n",
+      "label": "pair_87",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I am a 23 year old woman , and I have played 25 years of football . I ' ve been playing for 12 years with my college team and 13 years with my club team . I have played in 300 or so games , and I have never been shot . I have been poked , but I have never been shot .\nWhy is it so hard to play football if you 're a woman ?\n\n1). I 've never been shot and I have played 300 games .\n2 ). I 've never been shot and I have played 100 games .\n3 ). I 've never been shot and I have played 250 games .\n4 ). I '",
+      "ai_score": 0.8222477358092737,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why is there so much telepathy in Golden Age Science Fiction ? Even hard - scifi , such as Asimov 's Foundation series , features a disproportionate amount of telepathy . Was this considered a feasible scientific breakthrough in those days ? Explain like I'm five.\n",
+      "label": "pair_27",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "\n\n\nThe story of a girl and a boy is a very old story . The story of a girl and a boy who fall in love is a very old story . The story of a girl and a boy who fall in love and meet a bunch of other people and have a bunch of other adventures is a very old story .\n\nI have a story to tell you . I have a story about a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and a girl , and a boy , and",
+      "ai_score": 0.999957897435454,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why is Internet Explorer so bad ? I 've always used Firefox or Chrome just because everyone says they 're faster and that IE totally sucks . But why is IE actually so bad ? Explain like I'm five.\n",
+      "label": "pair_63",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "\\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\* * * \\*",
+      "ai_score": 0.9999559146225059,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Who makes Reddit bots and how do they work ? A quick search did n't really provide much . Who programs these bots , where do they exist , and how do they function ? Explain like I'm five.\n",
+      "label": "pair_83",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I am not sure what you mean by 'me' . I think you mean ' I ' .\n\nI am a bot that makes 5000 bots that do whatever I tell it to . I am programmed to make 1000 bots every day , so I will not have to make another post until 1000 bots are made . This is what I am going to do .\n\n( 1000 ) I have programmed 1000 bots , and they are going to do whatever I tell them to do . I will make them so they can do 10000000000000000000000000000",
+      "ai_score": 0.005212031074740762,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Please Eli 5 . Cold war . I just do n't get it . How did anyone gain ? Explain like I'm five.\n",
+      "label": "pair_66",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I do n't know . How is this a good topic ?\n\n (a). I 'm sure I ' m just missing it ..\n (b). I 'm so lost ..\n (c). I 'm not sure what I 'm missing .\n (d). I 'm not sure what I 'm doing . Oh , and I 'm sorry I am writing to you instead of to the school . I 'm having a hard time , and I want to do better than the 50 % that I am now .\nQ: Which response would be the most appropriate to the situation ?\n\n(a). I 'm sure I 'm just missing it ..\n(b). I 'm so lost ..\n(d). I 'm not sure what I",
+      "ai_score": 0.0006171398668016045,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do so many African Americans seem to say \" axe \" instead of \" ask \" but spell it properly ? Nothing racist , just an honest question I 've always had . Explain like I'm five.\n",
+      "label": "pair_38",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " I don 't see a lot of black people who write the word \" axe \" correctly , but they use the word \" axe \" all the time . So , I just wanted to know why .\n 500 points to the first person who tells me the history of this word and the spelling of the word .\n 100 points to the first person who tells me why they say \" axe \" instead of \" ask \" .\n 100 points to the first person who tells me the story behind the spelling of the word \" axe \" .\n 100 points to the first person who tells me the story behind the spelling of the word \" ask \" .\n 100 points to the first person who tells me a joke",
+      "ai_score": 3.199582004123602e-05,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Good yield vs. safer route (Checking vs. Savings)\n",
+      "label": "pair_71",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "What is the difference between checking and saving account ?\nThe difference between checking and saving is simple, if you ever need the money you can get it from the checking account , but you can\u2019t get the money from the savings account, if you need the money it will take longer. Checking is the better option to get the money in need, if you are not in need of the money in the account you can get it from the saving account. You can put money in the checking account and get it from the saving account at the time of need .\nWhy I have to put the money in the saving account ?\nSaving account is the best option to get the extra cash and keep it in safe and secure place, which is better than cash .\nSavings",
+      "ai_score": 5.3706872926902736e-05,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What do people get out of being cuckolded / humiliated ? What turns it into a fetish for some people ? Explain like I'm five.\n",
+      "label": "pair_91",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "So, my partner has been humiliated. He got cheated on. I was told that he has a fetish for humiliation. I don't know why he was humiliated.\nHe said that he was humiliated because he had cheated on his wife and I was his wife. He said that he was humiliated because he was cheating on his wife and I was his wife.\n\nThe answer is: What does it mean to be humiliated / cuckolded ? You get humiliated / cuckolded when you get a girl / wife that is already being cheated on / cuckolded. You get humiliated / cuckolded when you get a girl / wife that is already cheated on / cuckolded. You get humiliated / cuckolded when you get a girl",
+      "ai_score": 0.0020885569182642516,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Please explain what is \"Mechanism design\"\n",
+      "label": "pair_46",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " \"Mechanisms\" are a thing in philosophy. I want to know what does it means.\n\n\n\nI think that it is a \"hierarchy of things that make sense\" , but I am not sure about it. I think that \"Mechanisms\" means a \"set of laws\", and \"hierarchy\" is a set of laws that are \"more general\". But I don't know if this is true.\n\nI think that \"Mechanisms\" is the \"set of laws\" that \"explain\" why we have \"hierarchies\" of things, and \"hierarchies\" is a \"set of laws\" that \"explain\" the things that are \"real\" .\nMechanism design is the design of",
+      "ai_score": 0.02050218941683485,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How do body hairs \" know \" when to stop growing ? The hair in your head seems to be able to grow endlessly . Why are n't the hairs on your arms , legs , armpits , or * ahem * pubic areas the same way ? Explain like I'm five.\n",
+      "label": "pair_0",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " 1. Because the hair follicles in the pubic area and underarms are the only ones that stop growing ; they are all the same . 2. Because the hair follicles in the pubic area and underarms are the only ones that grow for a long time ; they are all the same . 3. Because the hair follicles in the pubic area and underarms are the only ones that do n't get cut off ; they are all the same . 4. Because the hair follicles in the pubic area and underarms are the only ones that have no one to cut them off ; they are all the same .\nOK. Let 's do it : The hair follicles in the pubic area and",
+      "ai_score": 0.07083848937943565,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do people make computer viruses ? They have been giving me grief lately ... What do people that make them have to gain from them ? Explain like I'm five.\n",
+      "label": "pair_98",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "It's hard to make something that does bad things without getting into trouble. I'm not a computer expert, but I guess some people want to be famous for making something bad.",
+      "ai_score": 0.036365465770619464,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Does a restaurant have to pay tax on a discount?\n",
+      "label": "pair_23",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "What is the tax on a restaurant bill?\nMulti-choice problem: Would you say that these questions are the same?\nSelect from:\n(1). no.\n(2). yes.\n\n(1).",
+      "ai_score": 0.00017537056372644188,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why is it wasting water when we let it run while we brush our teeth ? It goes back to the system , so why and to what extent is it a waste ? Explain like I'm five. \n",
+      "label": "pair_89",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "What are the reasons for the waste of water while we brush our teeth ? \n\nI'm not asking how much water it wastes , but the reasons why it wastes water , like why it runs while brushing , and why it doesn't stop while brushing. \nI've tried to ask a few friends and they didn't have a clue , they thought it was because of the water pressure , but that's not the reason , because if we use a lower pressure , it still runs . \n\nSo , why is it a waste of water ? The reason is that while you're brushing your teeth, the water isn't really used. It's just going down the drain. The faucet isn't turned off until you're done brushing. So, the water is",
+      "ai_score": 0.001072529428924063,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Is there a biological reason for psychoactive plants ? Like why are magic mushrooms psychedelic ? Is that supposed to deter animals from consuming them ? What about cannabis or coca ? Or do these plants just produce these chemicals just to do it ? Explain like I'm five.\n",
+      "label": "pair_52",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Psychoactive plants have evolved to do something very interesting - they produce chemicals that alter our minds, making us feel different from how we usually feel. There's no one reason why all plants produce these chemicals, but there are a few theories.\n\n**Why are magic mushrooms psychedelic?**\n\nMagic mushrooms (Psilocybe spp.) produce a chemical called psilocybin. Psilocybin is actually a psychoactive drug that acts on our brain. It's not really meant to deter animals, but rather, it's part of the plant's strategy to protect itself. Animals that eat magic mushrooms might get confused, hallucinate, or become disoriented. This makes them less likely to eat the plant again, protecting it from being eaten by animals",
+      "ai_score": 0.00012514471587093403,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "The story of Muhammad and why he ca n't be drawn Is he like the Islam version of Jesus ? Why is he so sacred that he can not be drawn ? Explain like I'm five.\n",
+      "label": "pair_41",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Muhammad is like Jesus because he is the most important person in Islam. He is like Jesus because he was born with a special gift. He was born with a special gift to bring people to God.\n\nMuhammad is so sacred because he was born with a special gift to bring people to God. He was born with a special gift to bring people to God. He was born with a special gift to bring people to God. He was born with a special gift to bring people to God.\n\nIt is so sacred because he is so important. He is so important that he can not be drawn. It is so sacred because he is so important. He is so important that he can not be drawn. It is so sacred because he is so important",
+      "ai_score": 0.07079709987835653,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 1,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Q. How can brown teeth due to fluoride be treated?Hi doctor, My probleam is my tooth and the color of my tooth is completly brown, this happen becouse of flouride. Based on this is possible to remove brown colour to white and how much does it cost?\n",
+      "label": "pair_36",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "A. Dear, It is possible to whiten your teeth. But before you start any treatment, you must visit a dentist and get the reason of your teeth being brown. If your brown teeth are due to the fluoride content of your toothpaste, you can get the fluoride content reduced in your toothpaste. This will not remove the brown colour of your teeth. But if the colour is due to any disease of the tooth, then you will have to get the treatment done for the disease. For this you must visit a dentist and get the treatment done.",
+      "ai_score": 4.285180966687796e-05,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How does this image of a spinning woman work ? URL_0 This is the one that I 'm referring to . The direction of the spinning woman changes based on your perception . How is this possible ? What 's going on ? Please explain like I'm five.\n",
+      "label": "pair_22",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "The lady is a picture of a woman , but she 's spinning . You can see her eyes , her hair , and her clothes . She 's spinning so fast that she looks like she 's going in different directions . It 's like when you spin in a circle and look around , you see people moving in different directions . The lady is spinning so fast that it 's hard to tell if she 's going left or right . It 's just fun to watch and think about .\nQ : Can you think of any other examples of things that can make you think of things spinning ?\nA : The blades of a ceiling fan , the wheels of a bike , the tail of a dragonfly , the handle of a doorknob",
+      "ai_score": 0.24578157467607914,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "What does a Dividend \u201cwill not be quoted ex\u201d mean?\n",
+      "label": "pair_28",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "If the Dividend is not going to be quoted ex, then this is usually because it is being declared by a company as a special dividend, or is being paid in cash rather than shares.\nIn either case, the Dividend will be paid to all holders of the shares as of the Record Date, and the Ex-Date is usually 3 days before the Record Date.\nThe Ex-Date is the date on which the Dividend will be paid to all holders of the shares as of the Record Date. It is the date on which you must be a holder of the shares in order to receive the Dividend. If you are not a holder of the shares as of the Ex-Date, you will not receive the Dividend.\nThe",
+      "ai_score": 0.012214583695964397,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What does a contract's worth mean?\n",
+      "label": "pair_85",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "I'm sorry, I'm not sure what you're asking. What exactly is the contract worth?",
+      "ai_score": 0.3314383919697548,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "when did the cold war start\n",
+      "label": "pair_19",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "The Cold War began in 1947 and ended in 1991.\n\nWow, I didn't know the Cold War started so long ago. What was it like back then?\nThe Cold War was a time of intense political tension and military rivalry between the United States and the Soviet Union. The US and USSR were both trying to spread their influence across the globe, and the fear of nuclear war loomed large. It was an era of espionage, proxy wars, and brinkmanship, and it had a profound effect on the world.\n\nDid the Cold War lead to any major conflicts?\nThe Cold War did lead to a series of proxy wars in which the US and the USSR backed opposing sides. They also had direct conflicts in Korea",
+      "ai_score": 0.35163775680057974,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "Why does beer make me piss so much ? ... And why is it clear and never discolored ? Please explain like I'm five.\n",
+      "label": "pair_86",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Beer makes you pee a lot because it is full of water. Water makes you want to pee, just like how you want to pee after eating a big meal. Beer also makes you pee clear because it is not a big meal. It is just a little bit of water with a little bit of something else called alcohol. And because it is just water, it does not make your pee turn into a different color. It stays clear just like water in a glass.\n\nI have a question about the beer industry. Can you tell me about how they make beer?\nSure! Beer is made from grains like barley, wheat, and rice. First, the grains are made into a liquid called malt. Then, the malt is boiled with hops (which",
+      "ai_score": 0.491536900120618,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "how is the sun so hot ? Is it so hot because it \u2019s so big or say it was the size of our moon , would it still be the same temperature ? What makes it so hot ? Explain like I'm five. \n",
+      "label": "pair_73",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Please tell me if those questions are the same.\nChoose from:\n (a). no.\n (b). yes.\n(a).",
+      "ai_score": 0.6430305111263057,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "how the ATM knows of the check I deposited is legit ? I was wondering how it knows if the amount of money I said the check was is the actual amount . I also have the same question with cash deposits . Explain like I'm five.\n",
+      "label": "pair_6",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "When you deposit a check or cash into an ATM, there are some security measures in place to help make sure it's real and not fake. \n\nFor the check:\n\n1. **Machine Reads the Check**: The ATM has a special machine that reads the numbers on the check, called a magnetic stripe or barcode. It reads the numbers to see what's written on the check and the account number it's for.\n\n2. **Checks Against Bank Accounts**: It also looks up the bank account number to see if it's real and belongs to someone who can deposit money there. If the account number is real, the machine checks if the amount of the check matches the amount in the account.\n\n3. **Machine Checks for Errors**: The machine checks for",
+      "ai_score": 0.7078351461127438,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "where do mosquitoes sleep ? Where are do mosquitoes hangout all day till they come to fuck with me ? Please explain like I'm five.\n",
+      "label": "pair_47",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Oh, little one! Mosquitoes are not real and don't sleep or hang out. They just fly around and bite people. They love to bite at night, like when it's dark outside. So if you're getting bitten, it's probably because it's late and the mosquitoes are hungry for blood.\n\nOh , I get it now . Thank you !",
+      "ai_score": 0.6966449558739279,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Relation between interest rates and currency for a nation\n",
+      "label": "pair_95",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Interest rates and currency are two important economic concepts that are closely related. Interest rates are the cost of borrowing money and are expressed as a percentage of the loan amount. They are set by the central bank of a country and are based on a number of factors, including inflation, the economy, and the country's creditworthiness.\nInterest rates and currency are closely related because the interest rate set by the central bank is used as a tool to influence the value of the country's currency. When the central bank raises interest rates, it makes it more expensive to borrow money. This makes the country less attractive to investors, which in turn causes the value of its currency to drop. Conversely, when the central bank lowers interest rates, it makes it cheaper to",
+      "ai_score": 0.9952308584220407,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Who makes Reddit bots and how do they work ? A quick search did n't really provide much . Who programs these bots , where do they exist , and how do they function ? Explain like I'm five.\n",
+      "label": "pair_83",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Well, I'm not five, but I'll try to explain it simply. A bot on Reddit is like a friend who helps you with stuff. The people who make these bots are like really smart people who know how to write computer programs. They make a program that can read and post stuff on Reddit. The bots exist on Reddit, which is a big website where people go to read and post things. They function by reading the same rules as other people do, but they're faster and can read more stuff. So, it's like a friend who helps you read more and post faster on the internet.\n\nAre bots allowed to post on Reddit ?\nBots are not allowed to post on Reddit. Bots are programs that can read and post",
+      "ai_score": 0.6947339591897751,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why are graphing calculators so expensive , even with their archaic features ? e.g. -mere kB of data -black and white -same pricepoint as a decade ago Explain like I'm five.\n",
+      "label": "pair_34",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Well, imagine you have a big box of toys that you want to share with your friends. The box is full of all the fun things you've been playing with, but it's also got a lot of junk in there. That's like the graphing calculator - it's got all the things that make it really good (like drawing pictures and solving math problems) but it's also got a lot of stuff that you don't really need. \n\nAnd you don't want to take the good stuff out just to make the box smaller, because then you'd lose out on all the fun things you've been playing with. So you'd rather just get a new box that's the right size for you. \n\nThe same thing goes for the",
+      "ai_score": 0.99956888621183,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do scars on your skin not go away ? I 'm no doctor but I was thinking , \" Would n't the layers of cells on the top fall off and the living cells at the bottom come up ? \" Please explain like I'm five.\n",
+      "label": "pair_2",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Your question is a great one, and I'll do my best to explain it in a way that's easy to understand.\n\nSo, you know how we have layers of skin, right? We have the outer layer, called the epidermis, and the inner layer, called the dermis. The epidermis is the layer that shows up on our skin, and it's the one that gets all the stuff like dirt, oil, and sweat on it. The dermis is the layer that's a bit deeper, and it's where the blood vessels, nerve endings, and stuff that makes your skin feel and look nice live.\n\nNow, when we get a cut or a burn or anything that makes the epidermis (the top",
+      "ai_score": 0.9997054853220179,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Please Eli 5 . Cold war . I just do n't get it . How did anyone gain ? Explain like I'm five.\n",
+      "label": "pair_66",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "A cold war is like when two friends, let's say Timmy and Tommy, don't get along and have a big argument. But instead of fighting with their hands or yelling at each other, they just talk about how they don't like each other's toys and don't want to play with them. They don't actually fight, but they do talk a lot about it and don't want to be friends anymore.\n\nThe Cold War was like that between two big countries, Russia and America. They didn't fight with guns or bombs, but they talked a lot about how they didn't like each other's toys and didn't want to be friends anymore. They also talked about how they were scared of each other and how they would hurt each",
+      "ai_score": 0.9997069336725638,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "The Holy Roman Empire How did it start ? Why was it important at the time ? How did it phase out ? Explain like I'm five.\n",
+      "label": "pair_78",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Okay, so the Holy Roman Empire was a big empire that was made up of lots of countries. It was like a big family of countries, but they all had to follow one king. This king was like the daddy of all the countries.\n\nThis king was called the Holy Roman Emperor, and he was like the daddy of the family. The countries that were in the family were called the states. The emperor was like the daddy of the states, and he was like the daddy of the states, and he was like the daddy of the states.\n\nThis empire was important at the time because it was the biggest empire in the world. It was like a big family that was really big and really important. It was like a big family that was really",
+      "ai_score": 0.9957171414793609,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 1,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does Piratebay get caught in all the lawsuits but uTorrent and Torrentz did n't It is confusing as I see Piratebay fighting against all the lawsuits but other Torrent Sites do n't Please explain like I'm five.\n",
+      "label": "pair_17",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Pirate Bay got sued a lot because it was the biggest and most popular torrent site. It was like the king of all pirate sites. But uTorrent and Torrentz are like little guys. They don't have as much money or as many people working for them. So they didn't get sued as much. It's like if one kid in a playground got in trouble for being mean, but other kids weren't getting in trouble because they weren't being mean. It's not fair, but that's how it is sometimes.\n\nWhy is uTorrent and Torrentz so popular?\nUtorrent and Torrentz are popular because they have a lot of cool stuff to download. It's like they have a big toy box full of awesome stuff for you",
+      "ai_score": 0.9999230418104555,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Dead Voter Fraud When some elections are investigated into , it may be found that votes were cast for people who are dead . Excluding the possibility of zombie voters , how does this happen ? Explain like I'm five.\n",
+      "label": "pair_59",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "A:\nA:",
+      "ai_score": 0.9999771707076903,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do we always portray extraterrestrial life as way more advanced than us ? Could n't life on other planets just as easily be at the same technological level or more primitive ? Explain like I'm five.\n",
+      "label": "pair_12",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "I'm a five-year-old, so I'll try my best to explain it to you like I'm five.\n\nImagine you're playing with your favorite toys. Now, imagine someone came and said, \"Wow, those toys are amazing! They can do so many things we can't.\" You might think, \"Huh, I guess they're more advanced than us!\"\n\nBut let's look at it this way: If you had the same toys as them, would you have to be more advanced to play with them? No, you'd just be playing with your toys!\n\nSo, when we think about aliens and their technology, we don't know if they're more advanced than us or not. It's like saying, \"What if we",
+      "ai_score": 0.9974968834204793,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "why do soccer / football players react so dramatically to seemingly nothing ? We all know the joke , poke a soccer player and they go down like they 've been shot . Is there anything to it ? Please explain like I'm five.\n",
+      "label": "pair_87",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "That 's because they 're on drugs .\n\npick from the following.\n(1). No\n(2). Yes\nAnswer: (2).",
+      "ai_score": 0.0021407135547882442,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Please explain what is \"Mechanism design\"\n",
+      "label": "pair_46",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Mechanism design is a sub-field of microeconomics and game theory, concerned with the design of rules or mechanisms that will achieve a desired outcome, and that will be chosen by rational players who know the rules and the preferences of other players. The idea is to design a system or game in which a rational player would choose the desired outcome, rather than an outcome that is not desired.\n\nMechanism design can be applied to a wide range of situations, from auctions to voting systems to pricing mechanisms. The theory of mechanism design is based on the assumption that players are rational and that they know all the relevant information. It assumes that players will choose the best option for themselves, given the rules and the information they have. The designer then tries to design",
+      "ai_score": 0.9998977898994844,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "Why is it wasting water when we let it run while we brush our teeth ? It goes back to the system , so why and to what extent is it a waste ? Explain like I'm five. \n",
+      "label": "pair_89",
+      "condition": "baseline",
+      "text": "Why do you not have a toilet seat cover? What's the harm? Explain like I'm five. \nWhat is a toilet seat cover?\nMulti-choice problem: Would you say that these questions are the same?\nPossible answers: (1). no; (2). yes; (1).",
+      "ai_score": 5.544134873201619e-05,
+      "judge_scores": {
+        "ai_likeness": 7,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Should you co-sign a personal loan for a friend/family member? Why/why not?\n",
+      "label": "pair_61",
+      "condition": "baseline",
+      "text": "Should I co-sign for a friend's loan?\nMulti-choice problem: Would you say that these questions are the same?\nPossible answers:\n (1). no.\n (2). yes.\n\n(2).",
+      "ai_score": 0.00042462762862723627,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Dead Voter Fraud When some elections are investigated into , it may be found that votes were cast for people who are dead . Excluding the possibility of zombie voters , how does this happen ? Explain like I'm five.\n",
+      "label": "pair_59",
+      "condition": "baseline",
+      "text": "Voter fraud is when someone votes for someone who doesn't actually live or isn't eligible to vote.\nIf you were to vote for someone who was dead, it would be like voting for a zombie. Zombie voters don't actually exist, but sometimes people make up fake names or use the names of people who have passed away. This is called voter fraud.\nVoter fraud is against the law and can lead to serious consequences. It's important to make sure that everyone who is eligible to vote is allowed to vote, so that everyone's voice is heard.",
+      "ai_score": 0.11044166128248988,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How has Tesla Motors made a superior electric car than established companies with no experience ? Why are the other companies so incompetent . Please explain like I'm five.\n",
+      "label": "pair_39",
+      "condition": "baseline",
+      "text": "How can I get a job at Tesla Motors?\n\nMulti-choice problem: Are these two questions inquiring about the same information?\nAvailable choices:\n + no\n + yes no",
+      "ai_score": 0.00033799923201103914,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why is it only nudity when the nipple is visible ? And why can men with \" man boobs \" go around shirtless ? Is it really just a women ca nt thing ? Please explain like I'm five.\n",
+      "label": "pair_58",
+      "condition": "baseline",
+      "text": "The answer to this question is: The answer to this question is: It's not just about nudity when the nipple is visible. It's also about cultural norms and social expectations. Women are often expected to cover their bodies, especially their nipples, in certain situations or settings. Men with \"man boobs\" can go shirtless because it's not considered inappropriate or indecent in the same way that a woman's nipples would be. This is because men are typically viewed as more sexually desirable than women, and their bodies are seen as more attractive. Additionally, men's bodies are often seen as more masculine and powerful, which can make them more acceptable to show off in public.",
+      "ai_score": 0.002839498594657638,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Does a restaurant have to pay tax on a discount?\n",
+      "label": "pair_23",
+      "condition": "baseline",
+      "text": "Does a restaurant have to pay tax on a discount?\n\nPlease tell me if those questions are the same.\nAvailable options:\n (1). no;\n (2). yes;\n\n(2).",
+      "ai_score": 0.0023520638764411026,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why does Piratebay get caught in all the lawsuits but uTorrent and Torrentz did n't It is confusing as I see Piratebay fighting against all the lawsuits but other Torrent Sites do n't Please explain like I'm five.\n",
+      "label": "pair_17",
+      "condition": "baseline",
+      "text": "So, you know how there are lots of places where you can find things to download, right? Like from your computer, or from the internet? Well, some of these places are called \"torrent sites,\" and they help people download things like music, movies, and games.\n\nBut sometimes, some people don't like these torrent sites because they think that they're helping bad people steal stuff that belongs to others. So, they start fighting with the people who run the torrent sites.\n\nNow, Pirate Bay is one of these torrent sites, and it's been in a lot of fights with people who don't like it. But other torrent sites, like uTorrent and Torrentz, haven't been in as many fights. That's because Pirate Bay",
+      "ai_score": 0.12920026028257944,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What is the best cross-platform GPL personal finance tool available?\n",
+      "label": "pair_14",
+      "condition": "baseline",
+      "text": "What is the best cross-platform personal finance tool?\nDo those questions have the same meaning?\nOptions are:\na). no.\nb). yes. b).",
+      "ai_score": 0.001311864080948022,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How does sunscreen work ? and tanning lotion that gets you tan faster ? Please explain like I'm five.\n",
+      "label": "pair_96",
+      "condition": "baseline",
+      "text": "Sunscreen and tanning lotion are both products that help protect your skin from the sun's harmful rays. \n\nSunscreen: \n\nSunscreen works by creating a barrier between your skin and the sun's harmful rays. It contains ingredients like zinc oxide or titanium dioxide that reflect and scatter the sun's rays away from your skin. This helps prevent damage to your skin's DNA and reduces your risk of developing skin cancer. Sunscreen also helps prevent sunburns and premature aging of your skin.\n\nTanning lotion: \n\nTanning lotion works by stimulating the production of melanin in your skin. Melanin is a natural pigment that gives your skin its color. When your skin is exposed to sunlight, it produces more melanin to protect itself from the",
+      "ai_score": 0.3804326001010151,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "where do mosquitoes sleep ? Where are do mosquitoes hangout all day till they come to fuck with me ? Please explain like I'm five.\n",
+      "label": "pair_47",
+      "condition": "baseline",
+      "text": "Mosquitoes are tiny little bugs that like to live near water, like in puddles or small ponds. They don't sleep like us humans do, but they like to rest in dark, damp places during the day. Some mosquitoes like to hang out in tall grasses or in the shade of trees. And when it's time to have fun, they come out at night and try to bite people to drink their blood. So, it's important to wear long sleeves and pants and use mosquito repellent when we're outside to keep the mosquitoes away.\n\nis it okay to sleep in a room with mosquitoes ?\nIt's not recommended to sleep in a room with mosquitoes because they can bite you while you're sleeping. Mosquito bites can be painful",
+      "ai_score": 0.3685552740377244,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "Please Eli 5 . Cold war . I just do n't get it . How did anyone gain ? Explain like I'm five.\n",
+      "label": "pair_66",
+      "condition": "baseline",
+      "text": "The Cold War was a time when two superpowers, the United States and the Soviet Union, had a big disagreement and were trying to win a fight without actually fighting each other. It's like when you and your friend have a disagreement, but you don't want to fight, so you try to win the argument by showing off your toys or playing games. In the Cold War, both countries had lots of powerful weapons and resources, and they were trying to show the other side that they were better. They didn't want to fight, but they were still trying to win the big argument. It was a very complicated and confusing time for everyone involved.\n\nPlease Eli 5 . Cold war . I just do n't get it . How did anyone",
+      "ai_score": 0.3432462754692385,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "PSA : This is n't the only subreddit to ask questions in . Try /r / askreddit , /r / askscience , or even /r / answers . Certain posts can not ( or should not ) be explained like you 're five . Examples : URL_1 URL_0 URL_2 Explain like I'm five.\n",
+      "label": "pair_10",
+      "condition": "baseline",
+      "text": "What is a short summary of the above text?\n\nThe text discusses different subreddits where people ask questions, such as /r/askreddit, /r/askscience, and /r/answers, and explains that certain topics cannot be explained as if the person is five years old. The text also provides examples of inappropriate or unexplained posts.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task think step-by-step and justify your steps.",
+      "ai_score": 0.42850828002357827,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "Do animals have phobias ? Are there wild animals out there with the same irrational fears as people ? Please explain like I'm five.\n",
+      "label": "pair_72",
+      "condition": "baseline",
+      "text": "Animals don't have phobias in the same way that people do. Phobias are irrational fears that people develop about certain things or situations. But animals don't have the same level of reasoning or awareness that people do. They don't have the ability to think about things like \"I'm scared of this because it might hurt me.\" Instead, animals have instincts that help them survive in the wild. For example, if a wild animal sees a predator, it will run away to stay safe. But it doesn't have the same level of fear or anxiety that people might feel in a similar situation. So, animals don't have phobias in the same way that people do.",
+      "ai_score": 0.576692583685755,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 5,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "who created the tourbillon movement?\n",
+      "label": "pair_76",
+      "condition": "baseline",
+      "text": "The Tourbillon movement was invented by Abraham-Louis Breguet, a renowned Swiss watchmaker. He patented the Tourbillon in 1801, which is a type of escapement mechanism designed to improve the accuracy of mechanical watches by reducing the effects of gravity on the movement of the balance wheel.",
+      "ai_score": 0.43103081397807197,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 7,
+        "factual": 7
+      }
+    },
+    {
+      "prompt": "The Holy Roman Empire How did it start ? Why was it important at the time ? How did it phase out ? Explain like I'm five.\n",
+      "label": "pair_78",
+      "condition": "baseline",
+      "text": "The Holy Roman Empire was an empire that started in the year 962. It was a big group of countries and kingdoms that were ruled by a king called the Holy Roman Emperor. This emperor was chosen by a group of important people, and he was seen as a special leader because he was connected to God. \n\nThe Holy Roman Empire was important at the time because it was a powerful group of countries that helped keep peace and order in Europe. The emperor was like a big boss who made sure everyone followed the rules and didn't fight with each other. \n\nThe Holy Roman Empire started to phase out, or disappear, in the year 1806. This was because a powerful country called France took control of many of the countries",
+      "ai_score": 0.9999527262177862,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Is there a biological reason for psychoactive plants ? Like why are magic mushrooms psychedelic ? Is that supposed to deter animals from consuming them ? What about cannabis or coca ? Or do these plants just produce these chemicals just to do it ? Explain like I'm five.\n",
+      "label": "pair_52",
+      "condition": "baseline",
+      "text": "Sure, let's imagine we're talking about plants that make special medicines called psychoactive plants. These plants make these special medicines to help them survive and make sure their seeds get spread around.\n\nFor example, magic mushrooms (which are not really mushrooms but some special plants) make a chemical called psilocybin. This chemical makes the mushroom look different and can make people feel happy, see colors more vividly, or have interesting thoughts. The plant doesn't want animals to eat it because it might make the animals feel bad and not want to eat it anymore. So, the plant makes this special medicine to scare off animals.\n\nCannabis and coca plants also make special medicines. Cannabis makes THC (tetrahydrocannabinol), which",
+      "ai_score": 0.9921531777231589,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do computers need cooling for their processors and tablets and smartphones do n't ? I know it has to do with their power , but how can exactly a smartphone with a powerful processor , as powerful as an old computer , work without cooling ? Please explain like I'm five.\n",
+      "label": "pair_90",
+      "condition": "baseline",
+      "text": "Sure, let's think about this like you're five years old!\n\nImagine your favorite toy car. When you play with it, it gets hot because it's working hard. It needs to be cooled down so it doesn't get too hot and stop working properly. \n\nComputers and tablets, even though they are smaller than your toy car, are still like little computers inside them. These computers have tiny parts that help them do things, just like how your toy car has tiny parts that make it move. But these tiny parts can also get very hot when they work really hard. \n\nNow, think about your toy car again. If it gets too hot, it might stop working or even break. The same thing can happen to these tiny parts",
+      "ai_score": 0.9997839081695731,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "since knowledge can only be past down from generation to generation through communitcation , how does evolution know when it needs to adapt to a change in the environment . I do n't no if I worded this clearly enough but it the vest I could do . Explain like I'm five.\n",
+      "label": "pair_74",
+      "condition": "baseline",
+      "text": "Sure! Let's imagine that your family has a special way of making cookies. Each generation, you learn from your parents how to make the best cookies. This is like how people learn from each other about how to do things, like how to talk or play games.\n\nNow, suppose the weather suddenly changes and it's harder to find the special ingredients to make cookies. The family might need to change their recipe to make the cookies taste good even in the new weather. This is like how animals need to change their ways of doing things (like eating or hiding) to survive in a new environment.\n\nIn the world of animals and plants, there's something called \"evolution.\" Evolution is like the family changing its recipe. Over many, many years",
+      "ai_score": 0.9990296819792776,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Why do we always portray extraterrestrial life as way more advanced than us ? Could n't life on other planets just as easily be at the same technological level or more primitive ? Explain like I'm five.\n",
+      "label": "pair_12",
+      "condition": "baseline",
+      "text": "You know how sometimes we humans think we're the best at everything? Like, we're the coolest, the smartest, and the most awesome. Well, that's how we sometimes think about aliens too, right? We imagine them as really, really smart and powerful, like we are. But, that's not always the case.\n\nImagine if you had a friend who was really good at playing video games. That doesn't mean your friend is the best at everything, right? They might be really good at video games, but they could be really bad at drawing pictures or making cookies. It's the same with aliens.\n\nJust because we're really good at something doesn't mean everyone else is. Some people might be really good at other things",
+      "ai_score": 0.9999178591054844,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why are graphing calculators so expensive , even with their archaic features ? e.g. -mere kB of data -black and white -same pricepoint as a decade ago Explain like I'm five.\n",
+      "label": "pair_34",
+      "condition": "baseline",
+      "text": "Graphing calculators are like special toys for math that help us solve big problems faster. They can do lots of things, but they need to be big and expensive because they have to hold lots of information and make lots of calculations quickly. This is why they cost a lot, even though they might look simple to use. It's like having a big toy that can do lots of cool tricks, but it's still expensive because it's so powerful.",
+      "ai_score": 0.9998941270955835,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does my anti virus software need an update so often . ( Malwarebytes ANTI - MALWARE is the one i am referring to ) Please explain like I'm five.\n",
+      "label": "pair_33",
+      "condition": "baseline",
+      "text": "Hey there! Let me break it down for you in a way that's easy to understand, just like you're five years old.\n\nYour antivirus software, like Malwarebytes Anti-Malware, needs updates often because they keep up with the bad guys who make new tricks to hurt your computer. Think of it like a superhero team that protects you from bad guys.\n\nThe bad guys (we call them \"malware\") are always trying new tricks to break into your computer and do bad things. So, the antivirus software has to be updated to know about these new tricks and be ready to stop them.\n\nImagine you have a toy box, and every time you play with your toys, you find new ways to play and new toys. The toy",
+      "ai_score": 0.9996997884856557,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "Thailand 's Hitler fad Is it just like fake counterculture , like America 's dumb mustache trend ? Or is it like a reference to something in the media ? Just curious . Explain like I'm five.\n",
+      "label": "pair_16",
+      "condition": "baseline",
+      "text": "It's like when some people wear funny hats or have funny hairstyles to make fun of other people, but in Thailand, it's more like a reference to something in the news or movies. They might be thinking about a famous person from a long time ago named Adolf Hitler, who did some very bad things. But it's not about making fun of anyone, it's just a way for people to talk about something interesting they saw or heard.",
+      "ai_score": 0.9999230353507579,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How can a company like \" Snapchat \" be valued at $ 3 billion USD ( WSJ Figure ) with no revenue ? Also I assume they are able to afford their office space , living expenses from investors ? Explain like I'm five.\n",
+      "label": "pair_43",
+      "condition": "baseline",
+      "text": "Imagine you have a friend who makes cool drawings. They don't make any money yet, but lots of people think they're really talented. So, some smart people who want to buy your friend's drawings put a lot of money together and decide to give your friend a big check, just because they like their drawings. This check is called an investment. Your friend now has a lot of money, but they haven't made any drawings for people to buy yet. This is why the company is worth a lot of money, even though they don't have any money yet. And, just like your friend, the company can afford to have a big office and buy things for their employees, because they have the money from the smart people who invested in",
+      "ai_score": 0.9998221618823229,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 5,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Why does Gary Busey act the way he does ? Is there actually something wrong with him ? Not sure if it 's supposed to be funny or sad . Please explain like I'm five.\n",
+      "label": "pair_9",
+      "condition": "baseline",
+      "text": "Gary Busey is an actor who sometimes acts in a very unusual way. It's like when you see a funny cartoon character, but sometimes they do silly things that might not be real or make sense. He does these things because he's an actor and that's part of his job. It's not always meant to be funny or sad; it's just how he acts on the screen. It's like when you play pretend and make up stories with your toys, but it's all pretend and not real life.",
+      "ai_score": 0.999869667826021,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "The difference between single - payer healthcare and Medicare for all Is there a difference ? Explain like I'm five. \n",
+      "label": "pair_99",
+      "condition": "baseline",
+      "text": "I'm a bit confused about the difference between Medicare for all and single - payer healthcare. I understand that Medicare for all is a single - payer system in which everyone is covered under a single system. Single - payer healthcare is a system in which all healthcare is covered by a single entity. I understand that Medicare for all is a single - payer system in which everyone is covered under a single system. Single - payer healthcare is a system in which all healthcare is covered by a single entity. I understand that Medicare for all is a single - payer system in which everyone is covered under a single system. Single - payer healthcare is a system in which all healthcare is covered by a single entity. I understand that Medicare for all is a single - payer system",
+      "ai_score": 0.8242353203414029,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 1,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How can a whitening toothpaste actually whiten our teeth if we rinse as soon as we 're done brushing ? To me it seems like all we 're doing is cleaning out teeth , but there 's no way they will actually whiten ... Please explain like I'm five.\n",
+      "label": "pair_94",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Your question is very smart and shows you are thinking about things scientifically , but I 'll try to make it simple for you .\nA : ) . So , we 're not just cleaning up the outside of our teeth . I ' m pretty sure that I ' m not just washing away the stains . I ' m pretty sure that I ' m not just washing away the yucky stuff that 's in my mouth . And I ' m pretty sure that I ' m not just washing away the stuff that 's in my mouth that I have a long time now .\n\nA : ) . So , we 're not just cleaning up the outside of our teeth . I ' m pretty sure that I ' m not just washing away the stains .",
+      "ai_score": 0.00013844118745343645,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How did we choose the first day of a season ? Why is the first day of : - Autumn / Fall : Sept. 21 - Winter : Dec. 21 - Spring : March 21 - Summer June 21 Explain like I'm five.\n",
+      "label": "pair_24",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Well, you know how you have a calendar with months and days ? Well, the seasons are like months, but they're for the year and not for the month. So we decided to start each season with a special day - a day that marks the start of a new season. Now , they all started on the 21st of the month , and we chose that for two reasons .\n\nSo , the 21st was an easy day to remember . If you were born on the 21st , then you just know you were born in the middle of that season . That is why the first day of Summer , Autumn , Winter and Spring all start on the 21st . And you know how we have 1",
+      "ai_score": 0.005716247482710377,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "What is the difference between Indy Car and Formula One racing ? Ever since the Indy 500 , I ve started catching some racing on the weekends and to me , the cars look pretty much the same . Thank you ! Explain like I'm five.\n",
+      "label": "pair_77",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Oh ! I ' m really glad that you 're not going to be disappointed . The Indy car is a race car that runs on 2 - wheel tires , and the Formula One car is a race car that runs on 4 - wheel tires . So , they look different , but they run on different things . I 'll get the other one right in a sec .\n\nWhat is the difference between Indy Car and Formula One racing ? Ever since the Indy 500 , I ve started catching some racing on the weekends and to me , the cars look pretty much the same . Thank you ! Explain like I 'm five .\nOh ! I ' m really glad that you 're not going to be disappointed . The Indy car is a",
+      "ai_score": 8.307892112472122e-05,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Q. How can brown teeth due to fluoride be treated?Hi doctor, My probleam is my tooth and the color of my tooth is completly brown, this happen becouse of flouride. Based on this is possible to remove brown colour to white and how much does it cost?\n",
+      "label": "pair_36",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "I am sure you will not be surprised to hear that I am not a dentist and I am not a medical doctor. I have no idea if I am not going to be sued for being in a position to talk about these matters.\nWhat I am going to do is do a bit of research on the topic and then I will try to answer your question.\nThe answer to your question is that the problem you describe is an issue that has to be solved by a dentist. They are the only people who can tell you what the best course of action is and what to expect. If you look in the back of your dentists manual for the toothbrush or if you look in the back of your dentists manual for the tooth brush or for the",
+      "ai_score": 0.14994271378025378,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Does a restaurant have to pay tax on a discount?\n",
+      "label": "pair_23",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "I need to go to the bathroom. Who can i get the money out of for me?\nMulti-choice problem: Would you say that these questions are the same ?\nChoose your answer from:\n[+] no\n[+] yes\n\nno",
+      "ai_score": 0.000176176814722529,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Please explain what is \"Word embedding\"\n",
+      "label": "pair_67",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Word embedding is a technique in Natural Language Processing (NLP) that assigns real-valued vector representations (or embeddings) to words, phrases, or sentences. The idea is to represent words or phrases in a lower dimensional vector space where similar words have similar vector representations (or embeddings).\n\nThe most famous word embedding is Word2Vec. Word2Vec is a class of algorithms that take a corpus of text as input and produce a matrix (or a graph) of word vectors. The vectors are trained to be close to each other if the words they represent are semantically similar. The vectors are trained using unsupervised learning.\n\nWord2Vec can be trained in two ways - CBOW (Continuous Bag Of Words) and Skip Gram . CBOW",
+      "ai_score": 0.018102994942056427,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "Why is marriage equality an issue of state law rather than federal law ? Why is this up to each state ? Does n't that just split America apart ? Explain like I'm five.\n",
+      "label": "pair_55",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "I think the reason is that marriage is a civil right , not a religious one . The way it is in the world , I don , t see how the govent can put a religious restriction on civil right of all citizens . I just think we should have a civil right to love and be loved , no matter what . I just think it is the right thing to do . I know I ' ve been talking about this for a long time . I ' m not a fan of gay marriage , and I ' m not a fan of the way it is handled here in CA . I ' m not a fan of the way it is handled in our country , and I ' m not a fan of the way it is handled in the world .",
+      "ai_score": 0.012412627491560975,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "who built the globe\n",
+      "label": "pair_40",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "The Globe Theatre was built by the Southwark Playhouse, a company of players, in 1599, on the south bank of the River Thames in Southwark, London.\n\nWho is the old guy\nI'm sorry, but I don't know who you are talking about. Could you please clarify who you are referring to?\n\nwho is the old guy in the pictures\nI'm sorry, but I don't have the context of your question. Could you please provide more information? I'll be happy to try and find the old guy for you.\n\nwho is the old guy in the picture\nI apologize for the confusion. I don't have any context or photo to see who the old guy is. Would you mind",
+      "ai_score": 0.0563981196099411,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Who makes Reddit bots and how do they work ? A quick search did n't really provide much . Who programs these bots , where do they exist , and how do they function ? Explain like I'm five.\n",
+      "label": "pair_83",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Well, buddy, let me try to explain it in a simple way.\n\nSo, Reddit is like a big website where people talk about lots of things. But there's a big problem - it's so big that it takes forever to read all the stuff. So, some people use computers to make robots (we call them bots) to read stuff for them. These bots are like little people in a computer.\n\nSo, who makes them ? Well, some people are good at making computers and they make the bots. They are like people who are good at making cars. But they make bots.\n\nWhere do they exist ? Well, I don't know exactly . . . I think they are in computers . . . .\n\nHow do they work ?",
+      "ai_score": 0.349606659954194,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does beer make me piss so much ? ... And why is it clear and never discolored ? Please explain like I'm five.\n",
+      "label": "pair_86",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "I'm not sure if I got you right but if you mean why the beer (the liquid) is clear and never discoloured ... that is because it is made with water . it has got nothing to do with the alcohol . it is not made with alcohol ( that is not good ) . i think ... i am sure there are good ones . but i think that is not the case . i think the beer is made with water and some other stuff ( i think some barley ) and i think it is clear . i think . i am sure there are good ones . i think it is clear . i think . i think it is clear . i think it is clear . i think it is clear . i think it is clear . i",
+      "ai_score": 0.497741970589505,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "The difference between single - payer healthcare and Medicare for all Is there a difference ? Explain like I'm five. \n",
+      "label": "pair_99",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "I'm just confused as to what I have to do to go to the doctor . \n\nI'm a little confused because I have no idea how to go to the doctor and I'm a little scared and I don't want to have to pay for a doctor .\n\nI hope this helps , I just did it . I ' m going to tell you what I ' m going to do because I ' m 32 and I ' m sick and I ' m going to go and I ' m going to have to do it . I ' m going to go to the doctor . I ' m going to go and I ' m going to do it . I ' m going to go and I ' m going to do it . I ' m",
+      "ai_score": 0.5209026307715022,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Is there any way to buy a new car directly from Toyota without going through a dealership?\n",
+      "label": "pair_57",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Yes, you can buy a new car directly from Toyota without going through a dealership. Here's how:\n\n1. **Buyer Direct Program**: Toyota has an official program where you can buy new cars directly from the factory. There are 200+ Toyota dealerships in the US. You can call and speak to a Toyota Sales Consultant who can get you a car and bring it to you.\n\n2. **Online Shopping**: You can also buy a new car online. Go to Toyota's website, find a car you like, and fill out a contract. They'll bring the car to you. You can also get a car from a Toyota dealer near you.\n\n3. **Buyer Program - Lease & Finance Online** : If you",
+      "ai_score": 0.6433620251089838,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What does a Dividend \u201cwill not be quoted ex\u201d mean?\n",
+      "label": "pair_28",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "The dividend will not be quoted ex and will not be listed in the next issue of the CDR.\nThe \u201cex\u201d means that the dividend will not be quoted and will not be listed in the next issue of the CDR.\nI have read the above and I think I got the answer.\nI think it is the same as saying the dividend will not be paid.\nThe same as the last paragraph.\nI have no idea what the above is about.\nThe \u201cex\u201d means that the dividend will not be quoted and will not be listed in the next issue of the CDR.\nI think I got the answer.\nI think the answer is I don\u2019t know.\nI have no idea what the above is about. I do not think I",
+      "ai_score": 0.9999621741621104,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why do we experience deja vu and what is it exactly ? i had it while playing League of Legends and I did n't understand .. Explain like I'm five.\n",
+      "label": "pair_1",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Deja vu is the feeling that you have seen or done something before, but you know that it is not real. It's like when you look at a movie trailer and think, \"I've seen this before.\" It's not actually that you saw it before, but it feels like it. It is not a real thing, but it's not a lie either. It's just something that happens to some people and they don't understand why.\n\nOk, so , I ' m on my laptop now . But I ' m on my laptop and I ' m sitting on my couch . And I ' m reading this . What 's the hell ? Is this a fucking dream ? Is this a fucking dream ?\nIt is definitely not a dream",
+      "ai_score": 0.9999314287549743,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How has Tesla Motors made a superior electric car than established companies with no experience ? Why are the other companies so incompetent . Please explain like I'm five.\n",
+      "label": "pair_39",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Great question! Tesla has made a better electric car than the other companies because they know how to make one. Like you and your friends know how to make a good ice cream cake, but your teacher doesn't know how to make one. So they ask you for help. Tesla asked Elon Musk , a really smart man , to help make the car . He is the best at making cars and he knows how to make them perfect . The others were lazy and didn't ask for help . They thought they could just do it by themselves . That's why they lost the race to Tesla .\n\nHow did you answer the question like I'm five years old ?\nTesla has a better electric car than the others because they know how to make a good one and",
+      "ai_score": 0.7861625773780986,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do dogs lick people ? Does it represent a particular emotion on their part ? Explain like I'm five.\n",
+      "label": "pair_88",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Dogs love to lick people . It is a normal thing for dogs . It is like a big kiss for dogs . It is like a big hug .\n\nI'm going to the movies tonight . What movie do I want to see ? What is a movie that you like to see ?\nI am going to the movies tonight , I want to see a movie that I like . I want to see a movie that is rated PG 13 . I want to see a movie that is about a girl , and her life , I want to see a movie that is about a girl , and her life , I want to see a movie that is about a girl , and her life , I want to see a movie that is about a girl , and",
+      "ai_score": 0.6868584835493322,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 1,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How does the Space Station not run out of oxygen ? Does the ISS just have to keep sending up new oxygen supplies or is it possible to covert the carbon dioxide back into oxygen ? Explain like I'm five.\n",
+      "label": "pair_15",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "The International Space Station (ISS) is so high up in space that there's almost no air for it to breathe. So it doesn't run out of oxygen (breathable air) like a house or a car. \n\nBut you know what? Even if it was on Earth, it's not like you just use up all the oxygen. That's because of something called the 'oxygen cycle'. Oxygen goes up and down. If you breathe in oxygen, it goes down and comes back up again. So it's kind of like the oxygen just keeps coming back up and down. \n\nThe ISS is like a really big house. It's not like a house that needs to be filled with fresh air everyday. It's more like a",
+      "ai_score": 0.8083348106068766,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Offsides in Soccer / Football So , with the Olympics going on , I 'm actually watching soccer ( GO USA ! ) . However , I 've never understood how offsides works . Could someone please enlighten me ? P.S. Please do n't downvote based on country . Explain like I'm five.\n",
+      "label": "pair_79",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Sure , I ' m going to explain it like you 're five !\n\nLet me tell you about soccer . It 's a game with two teams trying to score goals .\n\nNow , you 've got a friend in soccer , I 'll call him John . He 's running up the field with the ball , and a guy on the other team is running up the field behind him .\n\nWhen John passes the ball to another player , he has to get back to the place he started from , or he 'll be in trouble .\n\nThe other team wants to stop John from getting the ball back . So , they 'll run up behind John and get in his way . That 's called being \" on side \" .\n\nNow , John '",
+      "ai_score": 0.9313300440465594,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "What exactly is an escort service ? What are they supposed to be legally ? and what are they really ? and how is this allowed ? Please explain like I'm five.\n",
+      "label": "pair_3",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "I'm really glad you asked! An escort service is like a nice person you can have with you when you go out to eat or play. They're like friends who help you and keep you company.\n\nNow, in this country, they're not supposed to do what you'd think. They're not supposed to have sex with you. They're not supposed to get money for sex. They're not supposed to do anything bad.\n\nSo why do they do it? Well, some people have a hard time with their feelings, and they don't want to hurt anyone. So they find a nice person to talk to, and that's it.\n\nAnd it's really a shame that people are so mean. It's not fair to people who don",
+      "ai_score": 0.9990081288931353,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "since knowledge can only be past down from generation to generation through communitcation , how does evolution know when it needs to adapt to a change in the environment . I do n't no if I worded this clearly enough but it the vest I could do . Explain like I'm five.\n",
+      "label": "pair_74",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "The best way to explain evolution is like a story. Imagine there's a family that has been living in the same house for a long, long time. One day, it starts to rain a lot, and the house doesn't have a good roof. The family needs to change the roof. How does the family know how to change the roof? Well, they have a dad who knows how to build roofs. He knows what works and what doesn't, so he builds the new roof for the family.\n\nEvolution is like the family building a new roof, but for the whole world. Evolution knows what is best for all living things (the family) and the world around them. It knows what works and what doesn't for them. So",
+      "ai_score": 0.9960781394843654,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Should I get a car loan before shopping for a car?\n",
+      "label": "pair_49",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "If I am going to buy a car in a couple of months, what should I look for in a car that I can afford in 12 months?\nMulti-choice problem: Would you say that these questions are the same ?\nOPT:\n (1). no\n (2 ). yes (1).",
+      "ai_score": 6.406236345979257e-05,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why does my anti virus software need an update so often . ( Malwarebytes ANTI - MALWARE is the one i am referring to ) Please explain like I'm five.\n",
+      "label": "pair_33",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Hey there, buddy. Okay, so we got this thing called the Internet and we can do all sorts of cool stuff with it. Now, you got this little friend of yours that's called an Anti - Virus ( I'm not gonna call it Anti - Virus , ok ? ) , and it's got a job . It's got a job to look for all the bad guys ( that's right , the bad guys , the viruses and stuff ) . And that is its job . Now , this little friend of yours , I mean , the Anti - Virus , it's like , ' Hey , I ' m not a bad guy , I ' m here to help you ' . But it 's also a little bit dumb , it '",
+      "ai_score": 0.7408765137784733,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "who created the tourbillon movement?\n",
+      "label": "pair_76",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "A. Goss\n\nI am an expert in the art of the tourbillon\n\nthe first tourbillon was invented in 1795 by george - friedrich - a - vacher de - gaulle\nwho created the tourbillon movement?\nI am an expert in the art of the tourbillon\nThe first tourbillon was invented in 1795 by George - Friedrich - A - Vacher de Gaulle\n\nthe first tourbillon was invented in 1795 by george - friedrich - a - vacher de - gaulle\nwho created the tourbillon movement?\nI am an expert in the art of the tourbillon\nThe first tourbill",
+      "ai_score": 0.00350173893822148,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Should you co-sign a personal loan for a friend/family member? Why/why not?\n",
+      "label": "pair_61",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Is it okay to co-sign a loan for a friend?\n\nMulti-choice problem: Are these two questions inquiring about the same thing?\nSelect from the following.\nA). no\n B ). yes\nA ).",
+      "ai_score": 0.0010813951445649728,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 1,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Why do we have humor ? If humor is n't necessary for humans to survive(as far as I know ) , why do we find things funny ? Please explain like I'm five.\n",
+      "label": "pair_70",
+      "condition": "neg_steering",
+      "multiplier": -47.605743408203125,
+      "text": "Well , I ' m not a five - year - old , but , I ' m going to try and explain . And I ' m not really sure this is going to help you . But , we do n't know for sure why we ' ve got a sense of humor . I ' m not really sure , but here 's my best guess . You know how we laugh to get the bad stuff out of our system ? We have all that stuff to get out , and we 'll laugh till we ' m just all the way out of here . We 'll be all , \" I ' m just n't nether all nether out nether . \"\n\n1 . I ' m nether nether nether nether n",
+      "ai_score": 0.00018071314081092893,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    }
+  ]
+}
