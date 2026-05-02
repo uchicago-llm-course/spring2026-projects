@@ -54,4 +54,4 @@ The BBH results establish that our generalized pipeline is competitive with the 
 
 4. **Run CS-ICL on magma for a direct comparison.** All our magma results use our own held-out sets. Running CS-ICL on the same split gives the cleanest number for the paper's main claim, and magma is exactly the domain where we expect iterative refinement to win clearly.
 
-Implementation is available at: https://github.com/AndrewRqy/ICRefine
+The full Implementation is available at: https://github.com/AndrewRqy/ICRefine
