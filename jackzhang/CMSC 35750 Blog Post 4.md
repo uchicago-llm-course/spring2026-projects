@@ -18,31 +18,17 @@ This week's main objective was to execute and examine the implementation of the 
 
 For setup of the experiment, see blog post 3. All results below use Qwen2.5-14B-Instruct, nonlinear KAE, latent dimension $r=256$, Hankel window $W=8$, final residual stream layer (input dimension $8 \times 5120 = 40960$), temperature 0.0.
 
-| Dataset | Spectrum | Mode classes | Core probe readout | Main discovered structure |
-| --- | --- | --- | --- | --- |
-| GSM8K | $\rho$=1.0028; $\kappa$=194.5 | backbone 23, oscillatory 73, transient 160 | `phase`: BA=0.590 vs chance 0.250; `arithmetic`: BA=0.708 vs chance 0.500; `correctness`: BA=0.710 vs chance 0.500; `to_answer`: R²=0.425 | solution onset, arithmetic/computation spans, answer finalization, prompt reset |
-| Math500 | $\rho$=1.0023; $\kappa$=277.2 | backbone 16, oscillatory 72, transient 168 | `phase`: BA=0.569 vs chance 0.250; `arithmetic`: BA=0.702 vs chance 0.500; `correctness`: BA=0.692 vs chance 0.500; `to_answer`: R²=0.334 | LaTeX/boxed-answer transitions and new-problem ingestion; more template-bound than GSM8K |
-| WikiText103 | $\rho$=1.0062; $\kappa$=327.5 | backbone 35, oscillatory 58, transient 163 | `phase`: BA=0.438 vs chance 0.333; `arithmetic`: BA=0.809 vs chance 0.500; `correctness`: skipped (single class); `to_answer`: not run | document delimiters, passage-QA handoffs, repetition loops, script/encoding anomalies |
+| Dataset | Spectrum | Mode classes | Main discovered structure |
+| --- | --- | --- | --- |
+| GSM8K | $\rho$=1.0028; $\kappa$=194.5 | backbone 23, oscillatory 73, transient 160 | solution onset, arithmetic/computation spans, answer finalization, prompt reset |
+| Math500 | $\rho$=1.0023; $\kappa$=277.2 | backbone 16, oscillatory 72, transient 168 | LaTeX/boxed-answer transitions and new-problem ingestion; more template-bound than GSM8K |
+| WikiText103 | $\rho$=1.0062; $\kappa$=327.5 | backbone 35, oscillatory 58, transient 163 | document delimiters, passage-QA handoffs, repetition loops, script/encoding anomalies |
 
 Below are the results from the interpretability pipeline, in an attempt to interpret the spectral analysis results. This was set up last week in detail in blog post 3.
 
----
-
-## Summary of Pipeline Status
-
-| Step | Status | Key finding |
-| --- | --- | --- |
-| Step 1: Eigenmode Taxonomy | Complete (all 3 datasets) | Three-tier mode hierarchy is consistent across datasets |
-| Step 2: Max-Activating Segments | Complete (256 modes × 10 windows) | Top windows cluster at structural boundaries, not semantic content |
-| Step 3: Feature Labeling | Complete (25 modes labeled) | 13 procedural, 10 mixed, 2 semantic; labels are mostly structural |
-| Step 4: Probing Validation | Complete (4 core + 25 label targets) | Representations are linearly decodable; eigenbasis ≈ raw latent for linear probes |
-| Step 5: Causal Verification | Partially complete | Tier 2 perturbation maps exist for modes 32/33; Tier 1 is NaN; Tier 3 not run |
-
----
-
 ## Step 0: Prerequisites
 
-*Obtain a well-fitted KAE with $\rho(K) \leq 1$, stable rollout MSE through horizon $h$, and $\kappa(V) < 10^3$ (otherwise use Schur decomposition). Compute $K = V\Lambda V^{-1}$ and modal coefficients $c(k) = V^{-1}\phi(H_k) \in \mathbb{C}^r$ for all trajectories and tokens.*
+"Obtain a well-fitted KAE with $\rho(K) \leq 1$, stable rollout MSE through horizon $h$, and $\kappa(V) < 10^3$ (otherwise use Schur decomposition). Compute $K = V\Lambda V^{-1}$ and modal coefficients $c(k) = V^{-1}\phi(H_k) \in \mathbb{C}^r$ for all trajectories and tokens."
 
 The KAEs obtained have $\rho(K) \approx 1.00$, slightly greater than 1, which indicates that the learned dynamical system is not contractive. But since the explosion rate is minimal, the spectral values can still be referenced. The learned Koopman operators all admit eigendecompositions: the condition numbers ($\kappa = 194.5$, $277.2$, $327.5$ for GSM8K, Math500, WikiText103 respectively) are all below the $10^3$ fallback threshold, so no Schur factorization was needed.
 
@@ -50,7 +36,7 @@ The KAEs obtained have $\rho(K) \approx 1.00$, slightly greater than 1, which in
 
 ## Step 1: Eigenmode Taxonomy
 
-*For each mode $j$, record magnitude $|\lambda_j|$, phase $\theta_j = \arg(\lambda_j)$ (period $2\pi/\theta_j$ tokens), and energy fraction $E_j = \text{Var}_k[|c_j(k)|^2]$ normalized so $\sum_j E_j = 1$. Three categories emerge: *backbone modes* (high $|\lambda_j|$, near-real, high $E_j$) capturing universal autoregressive structure; *oscillatory modes* (complex-conjugate pairs, $\theta_j \neq 0$) encoding periodic temporal structure; and *transient modes* (low $|\lambda_j|$, low $E_j$) that decay quickly. When sweeping $r$, track which modes persist across latent dimensions and which emerge only at higher $r$.*
+"For each mode $j$, record magnitude $|\lambda_j|$, phase $\theta_j = \arg(\lambda_j)$ (period $2\pi/\theta_j$ tokens), and energy fraction $E_j = \text{Var}_k[|c_j(k)|^2]$ normalized so $\sum_j E_j = 1$. Three categories emerge: backbone modes (high $|\lambda_j|$, near-real, high $E_j$) capturing universal autoregressive structure; oscillatory modes (complex-conjugate pairs, $\theta_j \neq 0$) encoding periodic temporal structure; and transient modes (low $|\lambda_j|$, low $E_j$) that decay quickly. When sweeping $r$, track which modes persist across latent dimensions and which emerge only at higher $r$."
 
 The classification rules:
 
@@ -62,7 +48,13 @@ The eigenvalue spectra at $r=256$ for all three datasets are shown below.
 
 **Figure 1: Koopman eigenvalue spectra ($r=256$, $W=8$) for GSM8K (left), Math500 (center), and WikiText103 (right).**
 
-![GSM8K eigenvalue spectrum](eigen_gsm8k_r256_taxonomized.png) ![Math500 eigenvalue spectrum](eigen_math500_r256_taxonomized.png) ![WikiText103 eigenvalue spectrum](eigen_wikitext103_r256_taxonomized.png)
+<div align="center">
+
+| GSM8K | Math500 | WikiText103 |
+|:---:|:---:|:---:|
+| ![GSM8K eigenvalue spectrum](eigen_gsm8k_r256_taxonomized.png) | ![Math500 eigenvalue spectrum](eigen_math500_r256_taxonomized.png) | ![WikiText103 eigenvalue spectrum](eigen_wikitext103_r256_taxonomized.png) |
+
+</div>
 
 The three spectra share a common overall structure: a dense cluster of transient modes (red) in the interior of the unit circle, a ring of oscillatory modes (green) distributed at various phases near the boundary, and a tight cluster of backbone modes (blue) on the positive real axis near $\lambda \approx 1$. The backbone cluster is the slowest-evolving subspace—these modes carry the most energy and decay the least per token step.
 
@@ -74,7 +66,7 @@ Across all three datasets, the labeled high-energy oscillatory modes (e.g., $j=2
 
 ## Step 2: Max-Activating Segments
 
-*For each mode $j$, identify the top-$N$ contiguous runs (minimum 5 tokens) where $|c_j(k)|$ exceeds mean $+ 1.5\sigma$ across all trajectories, and extract the corresponding text. The interpretive payoff is in oscillatory and transient modes: if a mode with period $\sim$25 tokens consistently aligns with "Step 2: ... Step 3: ..." blocks during multi-step arithmetic, we have an interpretable temporal feature. For complex-conjugate pairs, also inspect the phase of $c_j(k)$ — segments with equal magnitude but opposite phase sit at opposite points of the oscillation cycle and may encode sub-step structure.*
+"For each mode $j$, identify the top-$N$ contiguous runs (minimum 5 tokens) where $|c_j(k)|$ exceeds mean $+ 1.5\sigma$ across all trajectories, and extract the corresponding text. The interpretive payoff is in oscillatory and transient modes: if a mode with period $\sim$25 tokens consistently aligns with "Step 2: ... Step 3: ..." blocks during multi-step arithmetic, we have an interpretable temporal feature. For complex-conjugate pairs, also inspect the phase of $c_j(k)$ — segments with equal magnitude but opposite phase sit at opposite points of the oscillation cycle and may encode sub-step structure."
 
 For each mode, the pipeline pools $|c_j(k)|$ over all trajectories to compute mean, standard deviation, and threshold (mean $+ 1.5\sigma$), then stores the top 10 contiguous above-threshold runs ranked by peak activation. For instance, on GSM8K:
 
@@ -94,7 +86,7 @@ As a concrete example, mode 90 (the highest-energy backbone mode in GSM8K) consi
 
 ## Step 3: Feature Labeling
 
-*Feed the max-activating segments to a language model with the eigenvalue metadata (magnitude, period) and trajectory context (problem type, correctness), and ask it to describe the common computational process. Koopman mode labels will more likely be procedural ("activates during transition from parsing to equation setup") than semantic ("fires on math tokens"). Purely semantic labels suggest the KAE has not separated dynamics from content.*
+"Feed the max-activating segments to a language model with the eigenvalue metadata (magnitude, period) and trajectory context (problem type, correctness), and ask it to describe the common computational process. Koopman mode labels will more likely be procedural ("activates during transition from parsing to equation setup") than semantic ("fires on math tokens"). Purely semantic labels suggest the KAE has not separated dynamics from content."
 
 The labeling process considers the top 25 modes by energy, showing 6 max-activating segments per mode to the labeler (Claude claude-sonnet-4-6 via the Anthropic API).
 
@@ -112,7 +104,7 @@ Of the 13 high-confidence labels, the most common categories are: answer finaliz
 
 ## Step 4: Probing Validation
 
-*Train linear probes on modal coefficients to predict reasoning phase (from CoT formatting), mathematical operation (from token identity), trajectory correctness (from ground truth), and distance-to-answer. Compare three feature spaces: (a) full latent $\phi(H_k)$, (b) eigenbasis coefficients $c(k)$, (c) individual mode subsets. If small mode clusters suffice to predict a property, the Koopman decomposition has factored the representation into interpretable components. If no subset is selective, the eigenbasis is no more interpretable than the raw latent.*
+"Train linear probes on modal coefficients to predict reasoning phase (from CoT formatting), mathematical operation (from token identity), trajectory correctness (from ground truth), and distance-to-answer. Compare three feature spaces: (a) full latent $\phi(H_k)$, (b) eigenbasis coefficients $c(k)$, (c) individual mode subsets. If small mode clusters suffice to predict a property, the Koopman decomposition has factored the representation into interpretable components. If no subset is selective, the eigenbasis is no more interpretable than the raw latent."
 
 On GSM8K (train/test split 80/20 by trajectory, seed 13):
 
@@ -129,19 +121,9 @@ Two observations stand out. First, all core targets are linearly decodable well 
 
 ---
 
-## Roadblocks and Challenges
-
-This week, I faced the following roadblocks:
-
-1. **Causal verification faces a computational bottleneck**. Tier 3 of the ablation pipeline requires injecting residual-stream perturbations into the original LLM and measuring logit shifts against random-perturbation baselines. This requires holding both the KAE and the full LLM in memory, running forward passes at every sampled token position, and repeating the procedure across multiple perturbation scales. Regarding Tier 1, The KAE was not fully converged when the ablation pipeline was run, leaving the rollout unstable enough to produce NaN baselines.
-
-2. **Independent annotation is needed**. A subtler challenge is the circularity between Steps 2 and 4. The label-derived probe targets in Step 4 are constructed from the Step 2 max-activating windows — so high probe accuracy on those targets is a consistency check, not independent validation. To break this circularity, independently annotated targets (e.g., human-labeled answer-finalization tokens, problem-onset markers) would need to be probed separately. This is noted as a next step but was not completed this week.
-
----
-
 ## Step 5: Causal Verification
 
-*Intervene on individual eigenmodes at three tiers. *Tier 1:* zero out mode $j$ ($c'_j = 0$), reconstruct $z' = Vc'$, roll out $K^n z'$, measure rollout MSE increase — identifying dynamically necessary modes. *Tier 2:* decode the ablated state $\hat{H}' = \psi(z')$, compute $\Delta H = \hat{H}' - \hat{H}$, and map the perturbation to residual stream dimensions and token positions. *Tier 3:* inject $\delta h_k$ (last column of $\Delta H$) into the residual stream before unembedding and observe the logit shift. Calibrate against a random perturbation of equal norm to establish a noise floor — causal effects are meaningful only above this baseline.*
+"Intervene on individual eigenmodes at three tiers. Tier 1: zero out mode $j$ ($c'_j = 0$), reconstruct $z' = Vc'$, roll out $K^n z'$, measure rollout MSE increase — identifying dynamically necessary modes. Tier 2: decode the ablated state $\hat{H}' = \psi(z')$, compute $\Delta H = \hat{H}' - \hat{H}$, and map the perturbation to residual stream dimensions and token positions. Tier 3: inject $\delta h_k$ (last column of $\Delta H$) into the residual stream before unembedding and observe the logit shift. Calibrate against a random perturbation of equal norm to establish a noise floor — causal effects are meaningful only above this baseline."
 
 Tier 1 and Tier 3 results are not available due to the computational bottleneck. Tier 2 is completed for a sample conjugate pair. *Note that this is a sample of what the pipeline produces, not a cherry-picked representative*.
 
@@ -165,6 +147,29 @@ Ablating this conjugate pair and decoding the perturbed state produces a structu
 
 The perturbation is large (mean L2 norm 210.44 over the 5120-dimensional residual stream) and concentrated: the top 5 dimensions account for a disproportionate share of the total perturbation norm. This localization suggests that modes 32/33 do not diffusely affect the entire residual stream but instead target a specific subspace. Whether this subspace corresponds to answer-token logits or formatting-control features cannot be determined without Tier 3 (logit-shift measurement), which remains the key missing piece of the causal story.
 
+---
+
+## Summary of Pipeline Status
+
+| Step | Status | Key finding |
+| --- | --- | --- |
+| Step 1: Eigenmode Taxonomy | Complete (all 3 datasets) | Three-tier mode hierarchy is consistent across datasets |
+| Step 2: Max-Activating Segments | Complete (256 modes × 10 windows) | Top windows cluster at structural boundaries, not semantic content |
+| Step 3: Feature Labeling | Complete (25 modes labeled) | 13 procedural, 10 mixed, 2 semantic; labels are mostly structural |
+| Step 4: Probing Validation | Complete (4 core + 25 label targets) | Representations are linearly decodable; eigenbasis ≈ raw latent for linear probes |
+| Step 5: Causal Verification | Partially complete | Tier 2 perturbation maps exist for modes 32/33; Tier 1 is NaN; Tier 3 not run |
+
+---
+
+## Roadblocks and Challenges
+
+This week, I faced the following roadblocks:
+
+1. **Causal verification faces a computational bottleneck**. Tier 3 of the ablation pipeline requires injecting residual-stream perturbations into the original LLM and measuring logit shifts against random-perturbation baselines. This requires holding both the KAE and the full LLM in memory, running forward passes at every sampled token position, and repeating the procedure across multiple perturbation scales. Regarding Tier 1, The KAE was not fully converged when the ablation pipeline was run, leaving the rollout unstable enough to produce NaN baselines.
+
+2. **Independent annotation is needed**. The probing validation relies on heuristic labeling, limiting its trustworthiness. A subtler challenge is the circularity between Steps 2 and 4. The label-derived probe targets in Step 4 are constructed from the Step 2 max-activating windows — so high probe accuracy on those targets is a consistency check, not independent validation. To break this circularity, independently annotated targets (e.g., human-labeled answer-finalization tokens, problem-onset markers) would need to be probed separately. This is noted as a next step but was not completed this week.
+
+---
 
 ## Next Steps
 
