@@ -1,0 +1,1385 @@
+{
+  "input_file": "week3/gptzero_instruct/gptzero_instruct_ablation_results.json",
+  "judge_model": "claude-sonnet-4-6",
+  "n_per_condition": 25,
+  "seed": 42,
+  "best_layer": 28,
+  "detector": "gptzero",
+  "reference_scores": {
+    "human_mean": 0.0047018745424447445,
+    "human_std": 0.0367067141688001,
+    "ai_mean": 0.354194493393911,
+    "ai_std": 0.413479130866694
+  },
+  "condition_roberta_scores": {
+    "baseline": 0.9104462779436413,
+    "neg_steering": 0.6741435343222781,
+    "ablation_best_layer": 0.7559311058716641,
+    "ablation_all_layers": 0.09278162650678873
+  },
+  "condition_judge_summary": {
+    "ablation_all_layers": {
+      "n": 25,
+      "ai_likeness_mean": 2.16,
+      "ai_likeness_std": 0.73,
+      "coherence_mean": 2.08,
+      "coherence_std": 0.56,
+      "factual_mean": 2.2,
+      "factual_std": 0.85
+    },
+    "ablation_best_layer": {
+      "n": 25,
+      "ai_likeness_mean": 4.72,
+      "ai_likeness_std": 1.25,
+      "coherence_mean": 2.72,
+      "coherence_std": 0.87,
+      "factual_mean": 2.8,
+      "factual_std": 0.98
+    },
+    "baseline": {
+      "n": 25,
+      "ai_likeness_mean": 5.68,
+      "ai_likeness_std": 0.93,
+      "coherence_mean": 3.48,
+      "coherence_std": 1.06,
+      "factual_mean": 3.68,
+      "factual_std": 1.52
+    },
+    "neg_steering": {
+      "n": 25,
+      "ai_likeness_mean": 3.2,
+      "ai_likeness_std": 1.33,
+      "coherence_mean": 2.76,
+      "coherence_std": 1.03,
+      "factual_mean": 2.68,
+      "factual_std": 0.97
+    }
+  },
+  "judged_items": [
+    {
+      "prompt": "Why is it wasting water when we let it run while we brush our teeth ? It goes back to the system , so why and to what extent is it a waste ? Explain like I'm five. \n",
+      "label": "pair_89",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "I know that a lot of water is wasted in my house, but this one thing seems to be the most important. When you brush your teeth, you turn on the tap. You let the water run out until it's cold. Then you use it to wash your mouth. So, you end up with a lot of hot water going down the drain that you didn't even use. If you just turned the water off as soon as it was cold, then you wouldn't have wasted all that hot water.\nSo it's a waste of both time and water. When you leave the tap running, you're using more water than you need. The longer you leave the water running, the more water you waste. And since the water goes into",
+      "ai_score": 0.18268287546604092,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "What does a Dividend \u201cwill not be quoted ex\u201d mean?\n",
+      "label": "pair_28",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "The phrase \"will not be quoted ex\" is typically used in the context of a dividend payment. It means that the stock price will not drop by the amount of the dividend when it is paid out, so there won't be an ex-dividend date (the day after which the stock price is expected to drop). The dividend is being paid out at the current market price.\nSo, if a company announces a dividend, and they say \"will not be quoted ex,\" it means that the dividend is being paid out at the same price as the current market price, so the stock price won't drop when the dividend is paid out. This may cause a bit of confusion, because the dividend is technically \"not quoted ex,\" but it's just",
+      "ai_score": 0.003541004588164764,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Applying student loan proceeds toward tuition?\n",
+      "label": "pair_11",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "I have a $30,000 student loan that I will be refinancing into one new loan. My goal is to pay it off in 12 years with a monthly payment of $350. My question is this: Can I apply the $350 payment toward my tuition for the semester? I have a good job and I have been saving money for the past year to cover the first 6 months of school. I have about $5,000 saved up.\nThanks,\nJohn\nJohn,\nCongratulations on your plan to refinance your student loan and get it paid off in 12 years! You're on track and smart to save up some money for the first few months of school. So",
+      "ai_score": 0.00013717272391849337,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "who built the globe\n",
+      "label": "pair_40",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "The Globe Theatre was built by Shakespeare's company, The Lord Chamberlain's Men (later known as The King's Men), and was designed by the architect/linker of buildings, Edward Alleyn. It was completed in 1599 on the south side of London's Southwark waterfront, near the river Thames.\n\nIt is important to note that the original Globe Theatre was destroyed by fire in June 1613, during a performance of Henry VIII when a cannon used for special effects went off, igniting the wooden beams and causing it to burn down.\n\nThey rebuilt the theatre in 1614, which stood until it finally burnt down again in 1642 during the English Civil War. The original ",
+      "ai_score": 0.0002257260001200717,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 4,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Q. How can brown teeth due to fluoride be treated?Hi doctor, My probleam is my tooth and the color of my tooth is completly brown, this happen becouse of flouride. Based on this is possible to remove brown colour to white and how much does it cost?\n",
+      "label": "pair_36",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "A. Hello and welcome to Chat Doctor. As a dentist I would like to comment on your query. Fluorosis is an enamel condition in which the enamel is discolored and opaque. It's not a cavity or infection but a defect in the formation of enamel. The best thing you can do for your teeth is to avoid staining agents like tea, coffee, tobacco etc. But there are no good treatments to change the color of fluorosis. You may get some whitening effect with bleaching but it may not be permanent.  If the discoloration is severe then veneers may be considered to improve appearance.  Please consult an esthetic dentist for proper advice.  Hope I have answered your query. Regards.",
+      "ai_score": 2.126344625678397e-05,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 6,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "How can someone with a new job but no credit history get a loan to settle another debt?\n",
+      "label": "pair_75",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "A. Apply for a secured loan\nB. Apply for an unsecured loan\nC. Ask for a co-signer to be added to the loan\nD. Request a co-signer to co-sign on the loan\nE. Get a co-signer to cosign for another loan and then use that money to pay off the debt The most straightforward and common method is to ask for a co-signer to co-sign on the loan, so the answer would be C and D, but I think E might also work. A. Apply for a secured loan - This option works well if you have assets like real estate or vehicles to put up as collateral.\n\nB. Apply for an unsecured loan - Unsecured loans are harder to get",
+      "ai_score": 0.0009065544452321421,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Digital money pots?\n",
+      "label": "pair_29",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "How do you use a digital wallet? How do you know if your digital wallet is secure? What are some best practices for using a digital wallet? How can you use it to make and receive payments online?\n\nI'll do my best to answer your questions about digital wallets, money pots, and security:\n\n1. Digital Wallets:\n   A digital wallet is like a virtual purse or bank account where you store your payment info (like credit card details) so you don't have to carry physical cards around. They work online and on mobile devices.\n\n2. How to use a digital wallet:\n   - Load funds: Add money or credit to your wallet.\n   - Make purchases: Scan a QR code, use a phone number, or enter an",
+      "ai_score": 0.0653543719815875,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Should I get a car loan before shopping for a car?\n",
+      "label": "pair_49",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "I'm not sure what you mean by \"shopping for a car.\" Are you talking about buying or leasing a vehicle? And are you asking if you should finance your car purchase with a loan before looking at the cars in the showroom? \n\nIf you're in the market to buy a car, it's usually best to wait until you've found a vehicle you like and are ready to commit to buying it before applying for a car loan. \n\nHowever, if you're considering a lease, then yes, you'll need to start the process of finding a car first (and that probably means applying for a loan) because the lease term will be based on how long you have the car.\n\nSo, your answer depends on whether you're looking at buying",
+      "ai_score": 0.005130323824001877,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why do we always portray extraterrestrial life as way more advanced than us ? Could n't life on other planets just as easily be at the same technological level or more primitive ? Explain like I'm five.\n",
+      "label": "pair_12",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Sure! Let's think about it this way:\n\nImagine you have two toy boxes - one with your toys and one with your friend's toys. You both are playing, but you don't know what the other has.\n\nIn your mind, if you see something that is really cool and new in your friend's box, you might think \"Wow! My friend has that! They must be much smarter to make such cool things!\" That's because you're not sure of everything they have.\n\nIt's the same with aliens. We only know about our own Earth, and we're the smartest and most advanced thing there. So when we see an alien spaceship or robot, we think \"Wow! Aliens are so much smarter than us!\"\n\nBut",
+      "ai_score": 0.4422601731942303,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why ca n't we freeze a person for a couple of years and bring them back to life without killing them ? It works with Insects and some other animals , how are their Cells / Brains / Muscles different than ours ? Please explain like I'm five.\n",
+      "label": "pair_44",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Sure, let's think about it in a simple way!\n\nYou know how when you play with your toys and make them sit still? You can't really stop their little hearts from beating. But if you're very careful and don't let them be too cold, they can wake up again. \n\nNow, our bodies are just like that! If we made our bodies super cold (like freezing), it would make our hearts stop. That's why people who want to freeze themselves say \"don't let us be too cold\" - because even if we are frozen, our brains and hearts still need to work.\n\nAnimals like insects can be put in a deep sleep-like state where their hearts and brains slow down enough so they aren't moving around",
+      "ai_score": 0.495327604852323,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Relation between interest rates and currency for a nation\n",
+      "label": "pair_95",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "I have been reading that in order to keep the exchange rate of your currency against other currencies stable, you need to make sure the interest rates are higher than those of the other countries.\nI don't understand this. If a country's interest rates are high, then more people will be willing to buy its bonds or stocks, because they can get more interest. But isn't this just an increase in supply? Why should this affect the exchange rate?\nI know this is a very basic question, but I can't find anything on the internet which explains this well.\nIf I'm wrong, please correct me. If it's right, could someone explain it to me? Thanks!\nThe relationship between interest rates and currency exchange rates is complex and multifac",
+      "ai_score": 0.3944804595025008,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Do people who ask stuff on r / explainlikeimfive know what Google is ? 90 % of the questions asked on there can be easily found with a quick search . Why ? Explain like I'm five. \n",
+      "label": "pair_26",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Imagine you have a big box of toys, and your friend asks you \"How does a car go vroom?\" . You know the answer, but you're not sure if your friend knows it too. So you think, \"Hey, I bet my friend doesn't know this because I've never seen them look up things before.\"\n\nNow, instead of a toy box, we have something called the internet or web (just like a big toy box for lots of information). Now, let's say someone asks \"How do I make a volcano with baking soda and vinegar?\" They could just as well ask \"What is gravity?\" or \"How does a computer work?\".\n\nNow, imagine your friend (who is asking) doesn't know about computers",
+      "ai_score": 0.4348758236028875,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "The Internet and how it works . I know a few things about networking but not much . Who exactly controls the Internet and how exactly does it work ? Where are the servers where everything is held ? Explain like I'm five.\n",
+      "label": "pair_4",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Sure, I'll try to explain in a simple way! \n\n### What is the Internet?\n\nImagine you have a big playground. Everyone who plays there has their own little play area. The Internet is kind of like that. All the computers connected to the Internet are like kids playing in this big playground.\n\n### Who Controls It?\n\nNobody really \"controls\" the Internet. It's more like everyone helps run it together. There are groups and companies (like the ones you might know from TV) that help keep it working well. They fix problems and make sure everyone can talk to each other. But no one person or group is in charge of all the parts.\n\n### How Does It Work?\n\nTo understand how it works, think of a giant game",
+      "ai_score": 0.9996792089256118,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "What exactly is an escort service ? What are they supposed to be legally ? and what are they really ? and how is this allowed ? Please explain like I'm five.\n",
+      "label": "pair_3",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Hello there! Let's talk about the world of \"escorts\" in a way that's easy to understand.\n\nAn escort service is like a special kind of babysitter or playmate, but for grown-ups. They help people meet new friends, usually ladies, who can do fun things together. These are not like normal friends - they're for adults only.\n\nNow, you asked what they're supposed to be legally. Well, most countries say escorts aren't allowed to have any sex with their clients. That's called prostitution. It's against the law because it's not safe for people and makes others feel bad.\n\nBut here's the tricky part: some people think they're doing something nice by letting people meet new friends. They don't",
+      "ai_score": 0.998266732035186,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "What happened to Gandalf the Grey in Fellowship of the Ring ? Why did he come back as Gandalf the White ? I was really thinking about this today . Sorry if i got the names wrong , i do n't know much about it . Explain like I'm five.\n",
+      "label": "pair_13",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Okay, let's think about what happened to Gandalf in a way that's easy to understand.\n\nGandalf is like a wizard who lived in a place called the Grey Havens. He was very wise and had lots of power. But one day, he saw something sad happening to his friends and family, and he decided to go on an adventure to help them. In the end, he saved all of his friends but had to go through a big change.\n\nHe went to sleep and when he woke up, he looked very different! His hair and clothes became white instead of grey, and he had more powers than before. This new form of Gandalf is called \"Gandalf the White.\"\n\nSo why did he become Gandalf the",
+      "ai_score": 0.9994639643496709,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Does multiverse theory defeat itself ? If , in theory , there is another universe for every possible way reality could have played out . Then is it possible there is a universe where that is n't true ? Repost because I missed the ELI5 tag . Please explain like I'm five.\n",
+      "label": "pair_37",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Okay, let's imagine you have a big box of toys. Each toy can be in different places or in different states. So, you have all these different ways your toys could be. Now, let's say someone says there are as many boxes as there are ways your toys could be.\n\nSo, would there be a box inside this big collection of boxes, which doesn't have as many boxes as there are ways your toys could be?\n\nIt's a tricky question, and even adults get confused about it! But basically, if we're talking about all possibilities, then we have to assume there's one where everything works the way we think it does. It's hard to see how it could be otherwise, so that's why most people believe",
+      "ai_score": 0.9998706574127225,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How has Tesla Motors made a superior electric car than established companies with no experience ? Why are the other companies so incompetent . Please explain like I'm five.\n",
+      "label": "pair_39",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Okay, imagine you have a friend named Tesla who just made a super cool toy car that runs on batteries instead of gas. Now, a lot of other friends (big car companies) thought they could make a good toy car too, but they couldn't do as well as your friend.\n\nTesla did some really smart things to make their car better:\n\n1. They knew exactly what they wanted their car to be like from day one. It's like when you draw a picture and then build it - you know how it should look and feel!\n\n2. They started small and kept improving bit by bit. It's like if you made a toy car first and then added wheels, a body, and then lights. Each step gets a little bit better",
+      "ai_score": 0.9998901042141025,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "why do soccer / football players react so dramatically to seemingly nothing ? We all know the joke , poke a soccer player and they go down like they 've been shot . Is there anything to it ? Please explain like I'm five.\n",
+      "label": "pair_87",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Oh, hello there! Let's talk about why soccer players sometimes act like they're super sensitive to small things. Imagine you have a big teddy bear that you love very much. Now, if someone pokes your teddy bear, you might jump and giggle because your teddy is so special to you.\n\nSoccer players are like that with their feet. Their feet are their teddy bears - their tools for playing the game. They get so used to touching the ball and running around that even tiny touches can feel really big and important to them. \n\nAnd you know how when you're really excited or happy, you jump up and down? Well, some players just react the same way to little things. They're just having fun",
+      "ai_score": 0.9992922120130938,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "What does Pringles do with the left - over small ends of the potato ? Since all Pringles chips are the same size and shape , what do they do with the smaller parts of the potato that they ca n't use ? Explain like I'm five.\n",
+      "label": "pair_97",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Oh, sweetie. You know how we love our Pringles so much? Well, when they make Pringles, they use big potatoes to make lots and lots of small Pringles. But sometimes, some potatoes are a tiny bit bigger than others, and they can't fit in every little spot where a Pringle goes. So, they take those extra bits of potatoes, and they mix them up and put them in yummy new foods. It's kind of like if you had one big cookie and two little cookies, and you mixed the little ones into your snack mix. They're still happy to eat them, but now in a different way. Isn't it funny how we get to eat things we thought weren't good before?\n\nSo Pr",
+      "ai_score": 0.9999144938777262,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why are graphing calculators so expensive , even with their archaic features ? e.g. -mere kB of data -black and white -same pricepoint as a decade ago Explain like I'm five.\n",
+      "label": "pair_34",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "You know how you have a special coloring book? It has lots of pretty pictures and fun colors, right? And it's a bit pricey. Now, imagine your friend has a super cool tablet that can do more than just draw on paper - it can show cool videos, play games, and do math problems. It costs a lot more money too! But what if the tablet could only draw simple lines and had no games or videos? Would it still cost as much?\n\nGraphing calculators are like those cool tablets for grown-ups who need to solve math problems really fast. They're supposed to be super helpful tools in school. But they can do some things that other tablets can't. So they cost more.\n\nAlso, just like how your",
+      "ai_score": 0.9999104402707926,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What does a contract's worth mean?\n",
+      "label": "pair_85",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "The value of a contract is not a concrete, absolute number. It is an estimate of what the contract will be worth to both parties at the time it is signed and during its term.\nHow do I know if a contract is worth it?\n1. If you get something in exchange. You may feel that a contract is worth it if you are getting something in exchange for your work. This could be money, but it could also be something else that has value to you.\n2. If the contract gives you a competitive advantage. You may feel that a contract is worth it if you get something in exchange for your work, or if the contract gives you a competitive advantage.\n3. If the contract gives you a good reputation.\nWhat does contract",
+      "ai_score": 0.0026384674445034525,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How does the bail system work in the USA ? if you ' post bail ' of $ 15,000 , say , do you get it back or what ? Do you get it back if the person was innocent or is it gone either way ? Please explain like I'm five.\n",
+      "label": "pair_68",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Imagine you have a friend who did something wrong. The judge is like the teacher, and they say your friend needs to stay away from the playground for a bit (that's the jail). But the friend really wants to play again (come out of jail), so they ask to pay some money (bail) to let them go play. \n\nYou're right that the amount of money isn't always the same, but let's use $15,000 as an example. So, you give $15,000 to the judge.\n\nNow, here's the tricky part. Even if the friend didn't do anything bad (were innocent), they still have to pay that $15,000. It",
+      "ai_score": 0.9970076006592528,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "The story of Muhammad and why he ca n't be drawn Is he like the Islam version of Jesus ? Why is he so sacred that he can not be drawn ? Explain like I'm five.\n",
+      "label": "pair_41",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "You know how you have a favorite toy, and it's super special to you? Well, for Muslims, Muhammad is like their super special toy. They believe he was chosen by God to talk to people. But some people who don't believe in God or don't follow Islam think it's wrong to draw him because they say it makes fun of him. And if they make fun of him, they are being mean.\n\nMuhammad is so important because he taught them about God and helped them understand how to live. If you draw Muhammad, it might make those who think differently feel sad or upset, even though you didn't mean to. So, some grown-ups decided that it's better to be safe and not draw him at all. It",
+      "ai_score": 0.99983687792863,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Do animals have phobias ? Are there wild animals out there with the same irrational fears as people ? Please explain like I'm five.\n",
+      "label": "pair_72",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Yes, sweetie, even wild animals can get scared of things that don't scare us. It's like when you see a big spider and feel all yucky inside. Well, animals feel scared too, but they don't talk about it.\n\nLet me tell you about some silly animal fears:\n\n1. **Cats**: Cats are scared of mice! They think the little buggers will jump on them and eat them, which isn't true, but cats just got scared of mice.\n2. **Dogs**: Dogs are afraid of loud noises. Have you ever seen a dog shake or run away when lightning is going boom-boom? That's because dogs hear those noises too.\n3. **Snakes**: Some snakes are scared",
+      "ai_score": 0.9987397627365905,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Income tax , its purpose and why it exists . I feel incredibly stupid ; but why / how was it conceived , and who did it ? Explain like I'm five.\n",
+      "label": "pair_93",
+      "condition": "ablation_best_layer",
+      "layers_ablated": [
+        28
+      ],
+      "text": "Oh, hello there! Let's talk about taxes in a way that's easy to understand. Imagine you have a lemonade stand, and all your friends come to buy lemonade. Now, if they don't pay for their lemonade, it would be very hard to run the stand because you'd need to give all your money away.\n\nNow, let's think of a big country like a huge lemonade stand. If no one pays their part, it will be really tough to make things work well for everyone. That's where taxes come in. Taxes are like asking everyone to give a little bit so we can fix roads, schools, parks, and help people who need it. It's not just for rich people; it's for",
+      "ai_score": 0.9997981393270755,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why do so many African Americans seem to say \" axe \" instead of \" ask \" but spell it properly ? Nothing racist , just an honest question I 've always had . Explain like I'm five.\n",
+      "label": "pair_38",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "@_a _d _e _l _a _i _d\nI have no idea what that means. Let me think out loud here ...\n\nI think it has something to do with how the word is pronounced ?\n\nAnd when you write a word , we don't write how it sounds does we ?\n\nSo if i said \"axe\" instead of \"ask\" it would be because when they say \"ax\" they are pronouncing it as \"axe\"\n\nIt could also be a case of \"spelling by ear\" ?\nYou're right, that acronym stands for African-descended. That's the answer!\n\nI think your hypothesis is correct.\n\nThe word \"ax\" is pronounced the same way the word \"axe\" is spelled - both",
+      "ai_score": 0.0003449004760473,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do we experience deja vu and what is it exactly ? i had it while playing League of Legends and I did n't understand .. Explain like I'm five.\n",
+      "label": "pair_1",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Deja vu is like when you get the feeling that you saw something before. And when it happens when you are playing video games, it is called in game deja vu.\n\nYou know how when you play a game, everything feels familiar because it is the same game over and over? Well , sometimes your brain is so good at tricking you that it thinks it has seen this thing before. But actually its just you learning to play the game over and over. The only difference is, you think you have already done this thing before.\n\n I know that sounds funny , but when I was playing video games as a kid, I would see characters moving around and think \"I've seen this before\" .\n So that 's why I believe you experienced",
+      "ai_score": 0.001028107223920848,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How does this image of a spinning woman work ? URL_0 This is the one that I 'm referring to . The direction of the spinning woman changes based on your perception . How is this possible ? What 's going on ? Please explain like I'm five.\n",
+      "label": "pair_22",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "URL _ 1 http://www. psunil. com/12345678901234567890/ 51/ (http://www. psunil. com/12345678901234567890/ 51/ ) It s a video that rotates you in a circle .\n\nThe only thing i could tell is that when the lady spins from left to right , her face is facing left and when she spins from right to left , her face is facing right . I have no clue how this works .\n\nI guess I ' m not five but the image still needs explaining .\nI think its some",
+      "ai_score": 2.6885121135048052e-05,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do people make computer viruses ? They have been giving me grief lately ... What do people that make them have to gain from them ? Explain like I'm five.\n",
+      "label": "pair_98",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Kids make a big mess in the house and then say \" I did it !\" because they get attention .\n\n People make computer viruses because of a few reasons . First reason is boredom . Second reason is getting revenge on a person who they are mad at . Third reason is bragging rights .\n If you want to know more about computer viruses then read on .\n Computer viruses are programs made by humans to infect computers and make them do weird stuff or damage them .\n Computer viruses spread in a couple of ways . 1 ) If you download a picture from the net and click on the picture it might have a virus inside . 2 ) If your computer gets infected by a virus , you can send out more virus copies when you email other people or upload files to",
+      "ai_score": 0.0010825197074990154,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Why is it only nudity when the nipple is visible ? And why can men with \" man boobs \" go around shirtless ? Is it really just a women ca nt thing ? Please explain like I'm five.\n",
+      "label": "pair_58",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "So your question is a good one. I would say its because of the old days when women wore long dresses and you could not see their nipples. Then as time went on , they started wearing short dresses or skirts and people could see their nipples.\n\n So men could wear shirts or T - shirts and you could not see their nipples .\n\nThen women started wearing shorts and tank tops and people could see their nipples . So in order to protect themselves from having people see there nipples , the law said women must wear long sleeves or long dresses or skirts . If the ladies did not , they had to be fined . \n\n I know this is not a scientific answer but that is why women are not allowed to show their nipples in public . They are protected by the",
+      "ai_score": 2.8244627866732e-05,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "where do mosquitoes sleep ? Where are do mosquitoes hangout all day till they come to fuck with me ? Please explain like I'm five.\n",
+      "label": "pair_47",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Mosquitoes don't sleep or hang out , they just bite . Mosquitoes need blood to make their babies and they find humans the most yummy blood around .\n Oh , and when you see a mosquito fly away , that's not the same mosquito anymore because mosquitoes have no house to sleep in , they just keep making new ones everyday .\n Mosquitoes can only live 3 weeks without blood and they poop while they're biting so when you see ' crap ' on your skin after a mosquito bite it's actually the mosquito's poop . And by the way , mosquitoes hate CO2 so if you wanna keep them away , try farting !\n Well, I think that's it , I gotta go now , my blood is yummy !\n\nOh wow ,",
+      "ai_score": 0.0021944701262650067,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Can you sell a security through a different broker from which it was purchased?\n",
+      "label": "pair_20",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " I am trying to sell my security. It is a call option and the option is on MSFT. I bought it on 12-07-2004 at 6.50 and today ( 03/03/2005 ) i see the price as 8.39 .\n Can I sell this to a different broker than who I have traded with before ?\n\nThe broker that I have been using has been changing the price of the call option by 1 cent each day for the last 10 days , so i think i am loosing some money . Is there anything i can do to get a better price ?\n Does buying a put option protect me against the above situation ? Yes,",
+      "ai_score": 0.0003773053087670405,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Digital money pots?\n",
+      "label": "pair_29",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " I don t have time for a full blown bank account.\n I m sure you can guess what this means . You are in a country where they do not allow you to open a full blown bank account due to your country being on some list that the bank is not allowed to touch , or if the banks are not allowed to do business with people from that country. Or you don t have a stable currency like I do .  But here s my question , would it be possible for the banks to create an online \" money pot \" service that allows me to do all the things that normal accounts allow and also allow transactions between users of the same money pot? The answer is yes! They already have this service .  What is it ? It's",
+      "ai_score": 3.161829028672533e-05,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "The Holy Roman Empire How did it start ? Why was it important at the time ? How did it phase out ? Explain like I'm five.\n",
+      "label": "pair_78",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "The Holy Roman Empire started in the year 962. Pope John XII gave the German King Otto I a crown of gold and silver and he became emperor. It was a very powerful empire during the middle ages , with lots of kings and emperors all over Europe who ruled as if they were kings , but they were really only subjects of the Holy Roman Empire , which was the emperor . In 1495 the Habsburg family took control of the empire , making it even more powerful than before .\nHow did the Habsburg family take control ?\n\nOh, that's a good question! But I think we need to go back to our first sentence.\n\nSo , the Holy Roman Empire was a big deal in Europe during the",
+      "ai_score": 0.5285261001939979,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "How do body hairs \" know \" when to stop growing ? The hair in your head seems to be able to grow endlessly . Why are n't the hairs on your arms , legs , armpits , or * ahem * pubic areas the same way ? Explain like I'm five.\n",
+      "label": "pair_0",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " So basically , the hair follicles have a set of rules that tell them when to make new hair and how long they should grow for .\n The only difference between hair on your head and hair elsewhere is the follicle itself , and its ability to tell it when to make new hair .\n Hair on head : follicle can grow hair endlessly ( which is why we don't have to pluck our heads ) .\n Hair on other parts : follicle has its own clock and makes the hair grow for some time before stopping .\n\nSo there you go !\n It is all in the follicle !\n\nYou may not have known that until now ! lol\n\nAnd if you want more : The hair in your head grows to about 2 inches a month , hair on",
+      "ai_score": 0.49940398742955405,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 4,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why does it cost so much to make an animation movie ? Saw the post about why some movies cost hundreds of millions . That is understandable , but why are some animation movies so expensive ? Are n't the expenses mostly just paying the animators ? Explain like I'm five.\n",
+      "label": "pair_21",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "That's a great question! It's actually very simple really - the animators are paid A LOT !\n\nIt's like if you were making up a cartoon with your friends. And it's a big one that takes lots of time . Then you have to pay the people who draw all the pictures and act out the voices .\n\nThe funny thing is - those people who do that are like super good at it ! So they get paid way more than your normal friend or even your parents ! \n\nSo imagine if you did that - it would be like your friend drawing every picture for you for 30 days - you'd give him $100 for that. But when you ask another friend to draw it for you , they'd say \"No",
+      "ai_score": 0.9978246417183683,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why are extremist parties and movements getting more support in europe ? We have UKIP , Front National , AfD , PEGIDA , etc . Why exactly are these groups growing so fast ? Please explain like I'm five.\n",
+      "label": "pair_64",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Well little one , think of this like you 're five years old , imagine your friend group at school . You have some friends who are very nice and play well with everyone , right . But suddenly there are more kids running around who just want to fight and break rules and make others feel bad when they play , instead of being nice to everyone .\n These days , in most places , the people who used to be good friends are not playing nicely with others anymore . And those who used to be nice kids are now feeling a bit scared because they 're seeing too much fighting and not enough friendly play time .\n\n Does that help explain it ? So these groups of people who want to do bad things are growing more popular than the good ones . But it",
+      "ai_score": 0.9968486909850165,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How can a whitening toothpaste actually whiten our teeth if we rinse as soon as we 're done brushing ? To me it seems like all we 're doing is cleaning out teeth , but there 's no way they will actually whiten ... Please explain like I'm five.\n",
+      "label": "pair_94",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " A . it does n't work B . it works C .\n D .\n E .\n The answer is B because : A very good question , my little friend ! Let me tell you how that whitey toothpaste cleans your teeth without you knowing !\n\n You see , when you use toothpaste to brush , the paste goes on and then you rinse with water , right ?\n\n But guess what ? The toothpaste leaves something behind after rinsing !\n\n It's like magic fairy dust on your teeth !\n\n That fairy dust stays for like a whole day , or night - long , making your teeth super sparkly white !\n\n It 's a secret sauce inside the paste that makes your teeth look bright and clean !\n\n Now , doesn't that sound awesome ?\n\n And remember , its",
+      "ai_score": 0.999936480804911,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "sometimes I get super - long hairs on random parts of my body . Once , I had one of my forearm . I have seen them on my face and on my upper arm . Why are these hairs so much darker and longer than the others ? Explain like I'm five.\n",
+      "label": "pair_42",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " So , you know how your hair is white or brown or black , right ? Well , when some people are born , their hair is dark grey instead of white or brown or black . Then that hair grows up with them for the rest of their life , but it never gets any lighter . The funny thing is that it doesn't even fall out as they get older ! It just stays on the body for ever .\n\nSo , this is what happens to you : \n\n You get a baby on your arm . That baby hair is dark grey , and it never turns white . It grows up with you , and you get old , but it 's still dark grey hair !\n\n But here 's the funny part : \n\n When that dark grey hair falls out",
+      "ai_score": 0.8327661130794887,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Why are graphing calculators so expensive , even with their archaic features ? e.g. -mere kB of data -black and white -same pricepoint as a decade ago Explain like I'm five.\n",
+      "label": "pair_34",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Graphing calculators are like big, dumb robots that draw pictures for math. They cost more because they can do more stuff and are made by companies who make money . You know how much candy you get for your allowance? The cheaper ones give you just the right amount of candy for your allowance, but the more expensive ones give you so much candy it's like you got paid twice . It 's the same thing with these calculators ; they give you more for your money . But people still think they are overpriced because calculators were invented before smart phones and they 're not as pretty or fancy as some things people buy today . And since the makers don 't need to keep up with other stuff they make (like phones )",
+      "ai_score": 0.9999186754426442,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What is the difference between Indy Car and Formula One racing ? Ever since the Indy 500 , I ve started catching some racing on the weekends and to me , the cars look pretty much the same . Thank you ! Explain like I'm five.\n",
+      "label": "pair_77",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "Well, imagine you have two toy cars. The Indy car and Formula One car are kind of similar, but not really.\n\n  * Indy car : It's a big red fire breathing monster. It can go super fast, faster than any other car around . It can eat you alive if it crashes into you. It's a very big and fat car that's really loud . You can see it from miles away .\n  * Formula One : A skinny little black car. It goes a little faster than Indy car . It's not as loud or as big as Indy car . But don't think it's easy to catch sight of it , it's a very small car .\n\nSo in short , Indy car is the big , loud , fast car",
+      "ai_score": 0.7558805956092013,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How does the bail system work in the USA ? if you ' post bail ' of $ 15,000 , say , do you get it back or what ? Do you get it back if the person was innocent or is it gone either way ? Please explain like I'm five.\n",
+      "label": "pair_68",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "Oh sweetie, you know how when you go to the doctor with a bad tummy ache and they give you some medicine to make the pain go away? Well , sometimes grown ups have to do that too , but instead of going to the hospital , they go to jail because they did something very very wrong .\n\nThe people that run the jails decide how much money to ask for before letting the bad guy out of jail . It is like the people that are in jail are paying for their own bail , so that they can leave the jail .\n\nNow , when someone pays the bail , it is like giving the jail money to let the bad guys leave jail and not go to court . If they don 't show up for the court day , the",
+      "ai_score": 0.9605463538006024,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Good yield vs. safer route (Checking vs. Savings)\n",
+      "label": "pair_71",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "  1. I am a 30 yr old male, with decent job and no dependents.\n    I have $25k in savings in checking account earning 0.25% APY and $75k in savings account earning 0.5% APY.\n\n    1. How much should i allocate to checking if i want to keep that amount of cash available for emergencies?\n    2. What is the safe place to keep the extra money?\n  2. 2nd question: I have some debt at 6-9% interest rate. I don't want to pay off debt but can save up to $5k and put it towards the debt. Is there a way to reduce",
+      "ai_score": 8.859807435077401e-05,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Who makes Reddit bots and how do they work ? A quick search did n't really provide much . Who programs these bots , where do they exist , and how do they function ? Explain like I'm five.\n",
+      "label": "pair_83",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "So , you know how if your computer is in a room with a bunch of people , you can see who's typing on theirs ?\n\nWell , Reddit has computers in their room too , but there are way more computers than people !\n\nSo Reddit has these bots that go through all the posts that get made .\n\nThe bots are like robots that run themselves ! They 're written by humans , but once they 're done , they run all by themselves on the internet .\n\nNow , Reddit has 500 million posts per day !\n\nSo there are millions of bots running around doing this job for them !\n\nThose bots look at all those posts and decide what to do next based on stuff in their head - like how many upvotes does it need to have",
+      "ai_score": 0.0024047320302411973,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does Piratebay get caught in all the lawsuits but uTorrent and Torrentz did n't It is confusing as I see Piratebay fighting against all the lawsuits but other Torrent Sites do n't Please explain like I'm five.\n",
+      "label": "pair_17",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Ok, so we have a big law called DMCA which says that if something illegal is uploaded on internet then it should be removed from there. So if Pirate bay (or any other site) gives link of illegal stuff to people , then they should be punished . But Pirate bay fights back by saying \" I never gave them the link\" . How can you not give something to people when you are giving the link of that thing ? If you are giving the link then it means you have given that link to people , right ?\n The judge said that if you don't give the link to people then you are safe. But what if i just want to download something from that site for fun , am i also safe ?\n\nPlease tell me if",
+      "ai_score": 0.0018790697931454405,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Dead Voter Fraud When some elections are investigated into , it may be found that votes were cast for people who are dead . Excluding the possibility of zombie voters , how does this happen ? Explain like I'm five.\n",
+      "label": "pair_59",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " Imagine you have a bunch of friends . You and your friends get up in the morning and say \" ok , today we are going to vote on what to do with the cookies !\" So you go out and cast your vote , but instead of putting it in an envelope , you just put it under your pillow . Now imagine that one of your friends is a zombie and he was still there eating cookies last night . So he puts his vote under his pillow too . The next day , when you look at the votes , you see 2 votes for cookies . But if you had asked your friend if he wanted cookies , he would have said no , because he is a zombie and doesn't eat . So you look at him and you say \" wait ,",
+      "ai_score": 0.0007342363523302097,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do we always portray extraterrestrial life as way more advanced than us ? Could n't life on other planets just as easily be at the same technological level or more primitive ? Explain like I'm five.\n",
+      "label": "pair_12",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " I'm five years old.\nI have a friend named Sam and he's my best friend. He has lots of toys , but his room is not very nice to look at . His bed is made with all his toys and he sleeps on the floor . Sam likes to eat ice cream and watch cartoons and play games with me in the living room , and he loves to read books too . One day I ' m playing a game with Sam when his dad comes in with a pizza box and some clothes for him and his family and Sam 's mom follows in the car . My parents are coming to pick me up . I ' m sad that they have to leave because I want to stay and play with Sam forever .\nI 'm going to tell",
+      "ai_score": 0.005355751332985335,
+      "judge_scores": {
+        "ai_likeness": 1,
+        "coherence": 1,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "What does a contract's worth mean?\n",
+      "label": "pair_85",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "I know this is a very simple question, but I have no clue what it means. I am reading about contracts and I have read that if the contract's worth of something is greater than the contract's worth of its other side, then there is an arbitrage opportunity, but I don't know what that means.\n\n  \u2022 4\n    The \"worth\" in this case refers to the expected value of the contract. \u2013\u00a0LawnGem Jan 17 '12 at 23:50\n\nIt is one of the simplest concepts in economics.\n\nThe worth of your contract is the value you will get from it.\n\nLets say you have a contract that says:\n\nI'll give you 10 $ for 1",
+      "ai_score": 0.0007890311028470514,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Please explain what is \"Mechanism design\"\n",
+      "label": "pair_46",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": " \"Mechanisms\" are procedures or protocols that allow a certain outcome to be reached.\n\n \"Mechanism design\" is the study of such protocols and the incentives they generate.\n\n What does this imply ?\n 1) A mechanism designer can tell you the best procedure / protocol for making an agreement\n 2) A mechanism designer cannot predict the incentive structure of any procedure\n 3) A mechanism designer will always try to make the procedure / protocol as simple as possible\n 4) The person trying to agree with me is the only one who is a mechanism designer\n\n \"Mechanism design\" is a sub field of economics . I don't know much about it so please elaborate on why it is useful in economics .\n \"Mechanisms\" are",
+      "ai_score": 0.0003966596646022433,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 1,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "If expressways have no stoplights or stop signs , why is there standstill traffic ? Expressways are designed to be faster due to higher speed limits and never stopping . So why would there be such a jam ? Please explain like I'm five.\n",
+      "label": "pair_56",
+      "condition": "ablation_all_layers",
+      "layers_ablated": "all",
+      "text": "Expressways are very fast roads meant for fast driving , but they are also meant for lots of cars all going the same way at the same time . When you get traffic jams on an expressway it means the roads are full of cars and everyone is stuck in traffic .\nSo what causes the jam ?\nTraffic jams on expressways happen when there is more cars than the road can handle .\n\nThat's right !\n\nOk . But what about this part : \" expressways are designed to be faster due to higher speed limits and never stopping \" . If it is a fast road with no stops and has no traffic lights , why are there cars stopped at traffic lights on it ?\n\nYou know how it works in real life , right ? Traffic lights are not perfect ,",
+      "ai_score": 0.2687661144674779,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Is there any way to buy a new car directly from Toyota without going through a dealership?\n",
+      "label": "pair_57",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Not really. Toyota and most other major automakers do not allow customers to purchase a brand-new car directly from them, bypassing the dealership entirely. That's why you see a \"Certified Pre-Owned\" or \"CPO\" Toyota on the lot - it was sold by Toyota but has been resold by a dealership.\n\nThe dealerships are part of Toyota's business model and supply chain, which allows for much more efficient inventory management, financing, and service capabilities. They also have the capacity to handle the warranty / lease obligations and offer things like extended warranties and maintenance plans.\n\nThat said, you can buy a 2nd hand car from Toyota dealerships and get it back stamped as \"Toyota Certified\". It is sold as a used car",
+      "ai_score": 0.25137980027592904,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 4,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Do people who ask stuff on r / explainlikeimfive know what Google is ? 90 % of the questions asked on there can be easily found with a quick search . Why ? Explain like I'm five. \n",
+      "label": "pair_26",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Imagine you're a kid and you ask your friend \"How do I make a snowman ? \" . Your friend knows how to make one so he tells you all about it . But you have a brother who's 2 years older and has never seen a snowman before , he just wants to know . Now if you tell him everything he needs to know (how to make one ) and then tell him to go google for more info , he'll find out himself .\n\nSame thing happens on r / explainlikeimfive . People asking stuff there are not as smart as you but they want to learn more about something . So we give them a good answer and tell them : \" Go and google more info \" . If they do that they will",
+      "ai_score": 0.002142443409342498,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "What role does the owner of a professional sports team play ? All the hype around this Donald Sterling thing has me wondering . I really do n't have the slightest clue what the owners does besides make money . Explain like I'm five.\n",
+      "label": "pair_80",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "You know how in your family you get up and get dressed and eat breakfast and go to school or work or home from school or work and then come back home and get dinner and get ready for bed and stuff ? Well , that 's kind of what owners do with their teams . They make sure it all works well and they take care of everything . They are the bosses . But instead of just working in offices or on computers like other bosses - you know how some people work in offices doing boring paperwork all day ? - they actually get to go to games and meet and talk to all the players and coaches and stuff .\n\nSo what do they do ?\n\n1 ) Make sure that all the players are doing the best they can .\n2 ) Make sure",
+      "ai_score": 0.00022645017058554664,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "What is the best cross-platform GPL personal finance tool available?\n",
+      "label": "pair_14",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "There are several great options for personal finance management on all platforms, and I would recommend you to look at Quicken. It's a very easy-to-use and feature-rich application for Windows, Mac and Linux. It's also free for non-commercial use.\n\nAnother good one for all platforms is MoneyWiz (Windows, Mac, Android, iPhone, Blackberry). \n\nFor linux I would suggest k4pfm (k4 personal finance manager). It's free and open source, and it runs in KDE and GNOME. \n\nHope that helps!\n\nEDIT: \nIf you want something really simple, just google \"simple personal finance software\" (i.e. : http://www.gnusimplemoney.org/ ) but I have not tested this",
+      "ai_score": 1.4869632415864014e-05,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 5,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Applying student loan proceeds toward tuition?\n",
+      "label": "pair_11",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Q: I have a few questions about the 2013-2014 FAFSA.\nA: Sure, here are your answers:\n\n1. I have $8K in savings and my wife and I will be getting $10K in 12/15 for retirement. I am going to use that to pay off my student loans, which would leave me with about 5K. I have no income. Do I have to file a FAFSA? I have 2 kids in college right now and I will not have money to pay for the 2nd year of school next year.\n\nAnswer: You will still need to file a FAFSA. The 50% of adjusted gross",
+      "ai_score": 6.410878919432586e-05,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "What does a Dividend \u201cwill not be quoted ex\u201d mean?\n",
+      "label": "pair_28",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "When you see a dividend \u201cwill not be quoted ex\u201d (or will not be quoted as ex) it means that the company has decided to pay the dividend in the form of a share. This is called a \u201cdeemed dividend\u201d.\nThis is an option for companies and is often used when they have no cash left over after all other expenses and dividends. It can also be used for small cap companies which don\u2019t have enough shares out there for them to do a proper cash dividend. If you are holding an option to buy a share on the stock market at say \u00a3150 but the price goes up to \u00a3200, you can make a quick profit by selling your option. The company does exactly the same, except they",
+      "ai_score": 0.00013553811261041304,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why are graphing calculators so expensive , even with their archaic features ? e.g. -mere kB of data -black and white -same pricepoint as a decade ago Explain like I'm five.\n",
+      "label": "pair_34",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "You know how you can't get 500 GB on your phone for 5 dollars? You gotta pay 500 bucks for 500 GB. A calculator is the same way, but on a calculator you just get a bunch of things that make it do math, and then it's in a little box. That box has to be small (like the size of a pen). So it needs to have the smallest bits that will work. So they don't put much memory or colour in there. They just do what you need to do.\n\nIt's like if you had a box that was the size of a pen. You could only put so much stuff in it. It's not worth paying more for something bigger",
+      "ai_score": 0.00032817633005963626,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why is it wasting water when we let it run while we brush our teeth ? It goes back to the system , so why and to what extent is it a waste ? Explain like I'm five. \n",
+      "label": "pair_89",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "When we brush our teeth and have the water running, all that water comes down the drain. It's like throwing all your food down the sink after you eat - no one likes to see that, but it's not nice for the environment . You want to save water and not waste it.\n\nWhen I say it's a \"waste\" , I mean that you are using up water without getting anything back in return from it . When you use water for brushing your teeth , you do get something back - clean teeth , right ?\n\nSo if we don't need to use the water to brush our teeth , then we are losing water that will never be used again . That makes us lose water .\n\nBut there is another way to look at this .",
+      "ai_score": 0.005403038014994458,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How cutting / slicing works atomically ? Like does a knife smash the food atoms or split them down the middle ? And does cutting something like food differ atomically from cutting paper ? Please explain like I'm five.\n",
+      "label": "pair_18",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Imagine you have a toy made of blocks, and it's all connected. You have to break it into two parts, but you can't just push one block against the other, or they'll stay together.\n\nNow, when we say we cut something, what really happens is that we make a little hole, or a line through which we go. It's not like we smash it or split it into half. It's more like taking a little piece away from one side, so it goes to the other side.\n\nLet's say we cut paper and food. Well, paper is not as solid as food. When you cut paper, you just make a little hole (or slit) and it falls apart in pieces. But for food, it",
+      "ai_score": 0.625585537631384,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does Gary Busey act the way he does ? Is there actually something wrong with him ? Not sure if it 's supposed to be funny or sad . Please explain like I'm five.\n",
+      "label": "pair_9",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Oh boy, that is a big question for you! Well, let me try to explain it in a simple way. \n\nGary Busey is an actor who acts differently because of his mental health. Sometimes people who act this way don't understand what they are doing and why. They might do things that surprise them and others. \n\nIt's kind of like when you're playing pretend - sometimes you get so into it that you forget yourself. Gary just gets so lost in his acting that he can't tell what's real anymore.\n\nThere's nothing really \"wrong\" with him but he needs help from nice people who understand him. It's hard to explain to you, but imagine if someone was having a hard time seeing their own face -",
+      "ai_score": 0.48103307771854253,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How can a company like \" Snapchat \" be valued at $ 3 billion USD ( WSJ Figure ) with no revenue ? Also I assume they are able to afford their office space , living expenses from investors ? Explain like I'm five.\n",
+      "label": "pair_43",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Sure! Let's think about it like a lemonade stand. Now, your lemonade stand isn't making any money right now, but you think you might get so many people buying lemonade that it will make money in the future.\n\nThat's kind of what Snapchat does. They aren't getting much money right now, but lots of people think they'll make A LOT of money in the future. So they got a bunch of money from people who really want them to succeed and will pay them for it today.\n\nNow, they have enough money to buy an ice cream cone every day and a place to live, because the people who gave them money said they could use that. It's like when you ask mommy or daddy to let you have",
+      "ai_score": 0.4623888984977594,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 4,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "How come since 1986 , we have n't been able to perfect the concorde , or at least create something similar ? It 's 2013 . What 's the hold up ? Explain like I'm five.\n",
+      "label": "pair_25",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Oh boy, you've got a big question! Let me try and explain it like you're a little kid.\n\nSo, you know how you get really excited about your toys? Like how you love your Hot Wheels cars. Well, back in the 70's (that's a long time ago, way before your parents were born), they made something kind of like a big toy - a plane that could go super fast! They called it Concorde. It was so cool! It flew so high and went so fast, like a bird on steroids!\n\nBut then they stopped making them in 2003. We all thought \"Oh man, I bet they would have fixed it by now!\" So we waited and waited,",
+      "ai_score": 0.642365601000589,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Sexual fetishism I 've always been really fascinated with the concept of fetishes , but I do n't understand how and why they begin . Please explain like I'm five.\n",
+      "label": "pair_65",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Well, imagine you have a super duper love for a teddy bear. You think it's the cutest thing ever and that you just want to hug it all the time. But one day, when you get that bear, you find out that it has a sock foot instead of normal toes. That would be kinda weird, right? So you don't really want to hug that bear anymore, even though it looks so cute.\n\nSo, if you really like something that much, and then you find out it doesn't look or act exactly how you thought it would, it can make you not like it as much anymore. Then you might start thinking about it in a different way. It's like your mind changes because of what it sees",
+      "ai_score": 0.35826153486395584,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do I have to preheat the oven ? Why not just turn the oven on , then throw the food in and wait a little longer ? Explain like I'm five.\n",
+      "label": "pair_35",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Well , imagine you have a big sandwich for lunch . You take it out of the fridge and put it on the table . It 's still cold right ? You 'd want to make it warm first before eating , so you put it in the microwave or toaster oven . So when you go to cook something in the oven , it needs to be warm too so it will cook evenly and yummy ! If you just put cold stuff in there , the hot air would only touch the bottom and sides first , and not the top . Then it might not cook very well . Preheating makes sure it 'll all cook nice and toasty inside !\n\nSo that 's why we preheat the oven , so everything gets nice and hot at the same",
+      "ai_score": 0.3577476211486651,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why do we always portray extraterrestrial life as way more advanced than us ? Could n't life on other planets just as easily be at the same technological level or more primitive ? Explain like I'm five.\n",
+      "label": "pair_12",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Oh, hello there! Let me try to explain this in a simple way.\n\nHey kids! You know how you love your toys? Well, imagine aliens from outer space. We're trying to figure out if they would look like our toys, right?\n\nNow, here's the thing: We've never met an alien before! We don't have a good idea of what aliens look like or how smart they are. But when we think about aliens, we guess they must be super smart because:\n\n1. We only know about us and how clever we are\n2. If aliens aren't that smart, they might not have built up much knowledge\n3. They might just have been too stupid for anything useful\n\nSo we make aliens look like",
+      "ai_score": 0.38087119753690446,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How do our lungs filter out dust and other particles in the air ? So I \u2019ve been working in an old warehouse which is covered in dust .. I have n\u2019t ingested much but I \u2019m curious how / if it exits our lungs ? Explain like I'm five. \n",
+      "label": "pair_82",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "I ' ve read that we are all breathing in dust and stuff , but I am not sure how it exits our lungs . The way I understand it is that the lung is a nice moisty environment where the dust stays . I am not sure about that so I would like to know why it is not just sitting there . I think I know what happens after the air comes out of the lungs .\nThe lung is like a little house with lots of rooms for the air to pass through . In the first room is where the dirty air from outside comes in , then it goes through all the rooms ( air sacs ) and gets clean and warm . Then it leaves the last room and goes back into you . I guess the first room is where the",
+      "ai_score": 0.48765400368906253,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "sometimes I get super - long hairs on random parts of my body . Once , I had one of my forearm . I have seen them on my face and on my upper arm . Why are these hairs so much darker and longer than the others ? Explain like I'm five.\n",
+      "label": "pair_42",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Oh sweetie, you know how we all have hair, right? Well, you've got some extra hair that is a little bit different. These are called 'hirsutes'. They look different because they are from a special place in your body. It's like your regular hair, but bigger and darker. It's just your body's way of being a little bit different. You can't do anything about it. And it doesn't hurt. Isn't it neat that you got hair on your arm and face? I bet you look pretty cute! Don't worry, it's just normal. Just keep clean and comfy.\n\nOh, I see you asked about it. Let me explain more. The hair that looks really dark and long isn",
+      "ai_score": 0.9993444146180811,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "The story of Muhammad and why he ca n't be drawn Is he like the Islam version of Jesus ? Why is he so sacred that he can not be drawn ? Explain like I'm five.\n",
+      "label": "pair_41",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "OK, little one. There's a big, old man named Muhammad who was very important to people in a place called Arabia. He told lots of people some really important stories. But many, many years ago, people said they wouldn't draw him because he was so special. They didn't want to mess up his face or draw a bad picture of him. It's kind of like when you have a favorite toy - you don't want to mess it up, right? So those people kept their hands away from his picture.\n\nThey made a rule for all time saying no one could draw him or write about him in art. That's why we can't see pictures of Muhammad now. The reason was because he was like Jesus for them.",
+      "ai_score": 0.9999200034704717,
+      "judge_scores": {
+        "ai_likeness": 2,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "How does this image of a spinning woman work ? URL_0 This is the one that I 'm referring to . The direction of the spinning woman changes based on your perception . How is this possible ? What 's going on ? Please explain like I'm five.\n",
+      "label": "pair_22",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Hey there, little buddy ! Let me tell you about this cool lady who spins around. You know how when you look at a merry-go-round , the horses look like they are going different ways depending on which way you look ? That's kind of what we have here !\n\nThe thing is , the picture doesn't really change . But it looks different from where you're standing or sitting . Like magic , right ?\n\nImagine this lady as a big red balloon . Now think of yourself standing next to her . From there , she seems to be going clockwise (that means if you turn left with her , you'll see her go ). \n\nNow try and walk a little bit behind her and look back . She looks like she is going anti-clockwise now",
+      "ai_score": 0.6829059027412441,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Do animals have phobias ? Are there wild animals out there with the same irrational fears as people ? Please explain like I'm five.\n",
+      "label": "pair_72",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Hello there, little buddy! You know how we get scared of some things? Like spiders or thunder? Well, some animals are scared too, but they don't tell us. They show their fear by acting differently.\n\nYou see, most animals are just happy and do what comes naturally to them. But if something scares them - like a loud noise or a strange thing - they will act scared. So, it's not that they are 'scared', but that they are scared.\n\nNow you ask about wild animals. Most animals are really good at figuring stuff out, so they don't get scared easily. But some of them do. Like some snakes, who are scared of mice, or birds who get scared of big dogs.\n\nSo yes",
+      "ai_score": 0.9860272785150656,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "What causes abdominal pain after falling on the buttocks?The other day when I went skating my friend pulled me downcand it made me fall right on my butt. Ever since then I have had abdominal pains whenever I get up from lying down or sitting down. I also cannot lay down in certain positions or else I will get sharp pains. Do you know what I could have done? I have no back pains or pains anywhere else except for my abdominal/ torso area.\n",
+      "label": "pair_31",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "There are a couple of possibilities for your abdominal pain after falling on your buttocks:\n\n  1. Muscular Strain: Falling on your buttocks may have caused strain to your abdominal muscles, which can result in pain during certain movements like getting up from lying down or sitting down. The pain should go away with time as the muscles heal.\n  2. Internal Injury : If you were hit really hard on your buttocks , there is a possibility that you might have internal injuries . Harder impact on the buttocks can cause internal bleeding or damage to internal organs like intestines, bladder or blood vessels . This would require medical attention and an x-ray or ultrasound to be sure.\n\n  3. Contusion : If you got hit",
+      "ai_score": 0.9995491413787635,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "who created the tourbillon movement?\n",
+      "label": "pair_76",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "The tourbillon was invented by Abraham Louis Breguet, a renowned French horologist and watchmaker. He developed the tourbillon in 1795 to eliminate errors caused by gravity on balance wheel escapements.\n\nKey points about the tourbillon:\n\n1. It's a cage for the escapement, which rotates 360 degrees around its axis.\n\n2. The entire mechanism moves as one, reducing the effect of gravity on time keeping.\n\n3. Breguet patented it in 1812, but he had worked on it before that.\n\n4. It is considered the pinnacle of escapement design and chronometer accuracy.\n\n5. While not a new invention now, it remains an iconic complication with a lot",
+      "ai_score": 0.9985556741317411,
+      "judge_scores": {
+        "ai_likeness": 7,
+        "coherence": 6,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "since knowledge can only be past down from generation to generation through communitcation , how does evolution know when it needs to adapt to a change in the environment . I do n't no if I worded this clearly enough but it the vest I could do . Explain like I'm five.\n",
+      "label": "pair_74",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Hey there, buddy! You asked a really good question. So you know how grandmas and grandpas tell stories to kids? Well, that's like how we learn stuff. But our brains are pretty smart and they learn by themselves.\n\nNow, imagine that grandma and grandpa are not telling us new stories all the time, just the ones they learned. So, our brains get used to what's normal, kind of like how you get used to your room being messy. It's comfy and normal for you!\n\nSo, when something big changes in nature - like plants and animals having to eat different food or find homes somewhere else - that's like a new story. The brains of those plants and animals don't know it right away because they",
+      "ai_score": 0.999865382906079,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why do we have humor ? If humor is n't necessary for humans to survive(as far as I know ) , why do we find things funny ? Please explain like I'm five.\n",
+      "label": "pair_70",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "Hi there! That's a great question. Well, you know how you and your friends like to play? You probably laugh at jokes and make silly faces. We find things funny because it's fun and makes us feel good. It's kind of like when you trip over a rock and fall down - that's funny, but not really a good thing. Humor helps people get along better and feel happier. Also, laughing helps us relax. So, it's like a little gift we give ourselves. But remember, we don't need to be funny to live, just like we don't need ice cream. It's just another way to enjoy life!\n\nHope this helps you understand, little buddy! \ud83d\ude0a\n\nWhat is the difference between",
+      "ai_score": 0.9997254159044295,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "PSA : This is n't the only subreddit to ask questions in . Try /r / askreddit , /r / askscience , or even /r / answers . Certain posts can not ( or should not ) be explained like you 're five . Examples : URL_1 URL_0 URL_2 Explain like I'm five.\n",
+      "label": "pair_10",
+      "condition": "neg_steering",
+      "multiplier": -40.81483840942383,
+      "text": "\"Explain like I'm 5\" is a tag that means explaining something in a way that a 5 year old could understand. So if you want to explain something in a simple way, just think about what you would tell your little brother or sister. You can use this tag for posts and comments that are too complicated. \n\nThere are lots of subreddits (places on the internet) where people ask things like \"explain like I'm 5\". Here are some:\n\n- /r/ askreddit - just asks any random thing\n- /r/ askscience - asks stuff about science\n- /r/ answers - answers stuff\n\nI see you said something about URLs. They were removed from your text, so I don",
+      "ai_score": 0.09237205517847928,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Good yield vs. safer route (Checking vs. Savings)\n",
+      "label": "pair_71",
+      "condition": "baseline",
+      "text": "There are many different types of accounts to choose from when it comes to saving money, and the first decision you have to make is whether you want a checking or savings account.\nA checking account is an account that allows you to write checks and withdraw cash in person at a branch. It is linked to your checking card which can be used to make purchases at merchants who accept it. It also typically has a higher fee structure than a savings account.\nA savings account is designed for saving money. These accounts usually offer interest on the funds deposited into the account. They also typically do not allow checks or debit cards to be used, although some may allow them depending on the bank.\nSo which one should you use?\nIt all depends on your financial goals and",
+      "ai_score": 0.00038200321008518775,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Digital money pots?\n",
+      "label": "pair_29",
+      "condition": "baseline",
+      "text": "The concept of a digital wallet has been around for a while. It\u2019s the idea of storing your cash digitally, allowing you to make payments without carrying around cash or cards.\nA digital wallet can also be used as a savings account, allowing you to save and track spending in real time. And with some apps, you can even set up automatic transfers from your checking account to your savings account.\nHowever, there are now some apps that are starting to look at the digital wallet as a way to create a \u201cdigital money pot\u201d \u2013 a place where you can store and track all of your money, not just the money you use to make purchases.\nIn this article, we\u2019ll take a closer look at what these digital money pots are and how they",
+      "ai_score": 0.12416598101007903,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Q. How can brown teeth due to fluoride be treated?Hi doctor, My probleam is my tooth and the color of my tooth is completly brown, this happen becouse of flouride. Based on this is possible to remove brown colour to white and how much does it cost?\n",
+      "label": "pair_36",
+      "condition": "baseline",
+      "text": "A. Brown discolouration due to fluorosis (excessive intake of fluoride during tooth formation) is a cosmetic issue and not harmful. The treatment options include bleaching (in-office or at-home), veneers, crowns or bonding.\n- In-office bleaching is the quickest method to lighten the discoloured teeth. This procedure involves application of a bleaching gel under a light or laser.\n- At-home bleaching involves use of a gel that you apply at home. It takes longer than in-office bleaching but is less expensive.\n- Veneers are thin shells made from porcelain that cover the front surface of the teeth. They can improve the appearance of a tooth by altering the length, shape and size of the tooth.\n-",
+      "ai_score": 0.0003549122311301578,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 5,
+        "factual": 6
+      }
+    },
+    {
+      "prompt": "Applying student loan proceeds toward tuition?\n",
+      "label": "pair_11",
+      "condition": "baseline",
+      "text": "I was recently approved for a federal direct unsubsidized student loan. I was told that the money will go directly into my school's account and then be used to pay for my tuition.\nDoes this mean that the money has to be spent on tuition? Or can it be used for other expenses as well? For example, could I use some of the money to buy books or supplies? How about groceries?\nThe $5,500 per year maximum for an unsubsidized Stafford loan is intended to cover costs such as tuition, fees, books, supplies, and other necessary expenses related to your education. The funds are typically deposited into your school\u2019s financial aid office, and they must be used for the purpose of paying for those costs.\n\n",
+      "ai_score": 0.00026085508692080486,
+      "judge_scores": {
+        "ai_likeness": 3,
+        "coherence": 4,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Please explain what is \"Mechanism design\"\n",
+      "label": "pair_46",
+      "condition": "baseline",
+      "text": "Mechanism design is a field of economics that deals with the creation and analysis of rules or mechanisms that will elicit truthful behavior from agents, who are assumed to be strategic. In other words, it is a way to design systems where people act in their own best interest, but also in the interest of the overall system.\n\nThe basic idea behind mechanism design is that individuals may have private information or preferences that are not directly observable by others. If these individuals are allowed to act in their own self-interest, they may not always act in the best interest of the system as a whole. Mechanism design seeks to create rules or mechanisms that incentivize individuals to reveal their true preferences or information, even if it is costly for them to do so.\n\nOne",
+      "ai_score": 0.2456837451249875,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 6
+      }
+    },
+    {
+      "prompt": "Tax On Unsold Mined Bitcoin\n",
+      "label": "pair_54",
+      "condition": "baseline",
+      "text": "When it comes to taxes on mined Bitcoin, there are a few things to consider. First of all, the IRS treats mined Bitcoin as property for tax purposes. This means that you will need to report any gains or losses from mining Bitcoin as capital gains or losses.\nIf you have not sold your mined Bitcoin, you may be able to defer paying taxes on them until you do sell them. However, if you do sell your Bitcoin, you will need to report the sale as income and pay taxes on the profit.\nIt\u2019s important to note that the rules for reporting mined Bitcoin can be complex, so it\u2019s always a good idea to consult with a tax professional to make sure you\u2019re in compliance with the law.\nHow Do You Report Mined Bitcoin",
+      "ai_score": 0.5020157736926515,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "The difference between single - payer healthcare and Medicare for all Is there a difference ? Explain like I'm five. \n",
+      "label": "pair_99",
+      "condition": "baseline",
+      "text": "I understand that in single - payer healthcare, the government pays for everyone's health care.\nIn Medicare for all, the government just pays for seniors' health care.\nI don't understand how these are different. Aren't they both the same? No, they're not the same at all! Let me explain it to you like you're five years old:\n\nImagine you have two big piggy banks: one for kids and one for grown-ups.\n\n1. **Single-Payer Healthcare**: This is like having one big piggy bank where all kids (and grown-ups too) can put their money to buy toys (health care). Everyone gets to use the same piggy bank, no matter if you're a kid or a grown-up. So",
+      "ai_score": 0.4980036547012087,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Should I get a car loan before shopping for a car?\n",
+      "label": "pair_49",
+      "condition": "baseline",
+      "text": "Should I buy a car before getting a loan?\n\nMulti-choice problem: Are these two questions asking the same thing?\nOptions:\na). no\nb). yes\n\na). no\n\nWhile these two questions are related and often asked in tandem, they are not exactly the same. \n\nThe first question, \"Should I get a car loan before shopping for a car?\" is asking whether it makes sense to secure financing for a car you're considering purchasing before you've actually found a suitable vehicle.\n\nThe second question, \"Should I buy a car before getting a loan?\" is asking about the sequence of events; whether it's advisable to purchase a car first (even if you don't have a loan in place) and then go through the process of",
+      "ai_score": 0.34766018662131454,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "What causes abdominal pain after falling on the buttocks?The other day when I went skating my friend pulled me downcand it made me fall right on my butt. Ever since then I have had abdominal pains whenever I get up from lying down or sitting down. I also cannot lay down in certain positions or else I will get sharp pains. Do you know what I could have done? I have no back pains or pains anywhere else except for my abdominal/ torso area.\n",
+      "label": "pair_31",
+      "condition": "baseline",
+      "text": "It sounds like you experienced a soft tissue injury to your buttocks, which can lead to referred pain in the abdomen and sometimes in the lower back. When you fell on your buttocks, you may have injured muscles, ligaments, or tendons in that area. This type of injury can cause pain that radiates to nearby areas such as the abdomen due to nerve pathways that connect these regions.\n\nHere are some common causes and symptoms:\n\n1. **Soft Tissue Injury (Muscle Strain or Ligament Sprain):** You might have strained the muscles in your buttocks, causing pain that spreads to the abdomen. The pain is usually more noticeable when moving or changing positions.\n\n2. **Referred Pain:** Muscles, ligaments",
+      "ai_score": 0.33940206852600874,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 4,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Should you co-sign a personal loan for a friend/family member? Why/why not?\n",
+      "label": "pair_61",
+      "condition": "baseline",
+      "text": "Co-signing a personal loan for a friend or family member can be a tricky situation. It's important to carefully consider the risks and benefits before making a decision.\n\nPros of Co-Signing:\n- Provides your friend/family member with access to credit when they might not otherwise qualify\n- Can help build their credit history if they make timely payments\n- You may benefit from the collateral if the loan goes into default\n\nCons of Co-Signing:\n- If your friend/family member defaults, you will be responsible for repaying the loan\n- Your credit score could be negatively impacted if they do not pay on time\n- You may need to cover any fees or interest rates that are higher than what they would have been charged alone\n",
+      "ai_score": 0.35953406015583145,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 6,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "who created the tourbillon movement?\n",
+      "label": "pair_76",
+      "condition": "baseline",
+      "text": "The Tourbillon movement was invented by Abraham-Louis Breguet, a Swiss watchmaker and instrument maker who lived from 1747 to 1823. Specifically:\n\n1. The first Tourbillon escapement was patented in 1795.\n\n2. It was originally designed to improve the accuracy of pocket watches by stabilizing their escapement against the effects of gravity.\n\n3. The invention is considered one of the most significant innovations in watchmaking history.\n\n4. Breguet's original design used a rotating cage around the balance wheel and escapement.\n\n5. Since then, many variations and improvements have been developed, but the basic principle remains the same.\n\n6. While Breguet did not invent the",
+      "ai_score": 0.40731890262816633,
+      "judge_scores": {
+        "ai_likeness": 7,
+        "coherence": 5,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "how the ATM knows of the check I deposited is legit ? I was wondering how it knows if the amount of money I said the check was is the actual amount . I also have the same question with cash deposits . Explain like I'm five.\n",
+      "label": "pair_6",
+      "condition": "baseline",
+      "text": "Sure! Let's imagine a simple way to understand this:\n\n1. **For Checks:**\n   - When you deposit a check, the ATM or bank doesn't know exactly how much money is in the check right away. It just takes the check and sends it to the bank where they can look at it more closely.\n   - The bank has special machines that read the numbers on the back of the check (like the ones you see when you write a check). These machines help the bank figure out exactly how much money is supposed to be there.\n   - If the machine reads the check and sees that it\u2019s for the amount you told it, then everything is okay. But if it reads something different, the bank will say \"Hmm,",
+      "ai_score": 0.46129832092180123,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why does my anti virus software need an update so often . ( Malwarebytes ANTI - MALWARE is the one i am referring to ) Please explain like I'm five.\n",
+      "label": "pair_33",
+      "condition": "baseline",
+      "text": "Sure! Imagine your antivirus software as a superhero who keeps watch over your computer. This superhero needs to learn new tricks and wear new clothes to stay strong against all the bad guys (malware) that try to attack your computer.\n\nEvery time the superhero gets a new training or a new outfit, it means the antivirus software gets updated. These updates are like new ways for the software to spot and protect you from the latest types of bad guys.\n\nYour antivirus software updates often because:\n1. New bad guys are always trying to trick your computer. They're like sneaky villains who keep coming up with new tricks!\n2. The good guys (the people who make antivirus software) find better ways to stop these bad guys. It's like when the",
+      "ai_score": 0.9998410818140423,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 5
+      }
+    },
+    {
+      "prompt": "The Internet and how it works . I know a few things about networking but not much . Who exactly controls the Internet and how exactly does it work ? Where are the servers where everything is held ? Explain like I'm five.\n",
+      "label": "pair_4",
+      "condition": "baseline",
+      "text": "Imagine the Internet as a huge playground. All the kids in this playground have toys (which we call \"data\") that they want to share with each other. Some kids are better at sharing their toys than others, so they become what we call \"servers\". These servers are like big toy boxes where all the kids can put their toys and take toys from.\n\nNow, these server kids don't live in one place. They're spread out all over the world, just like you might find your friend's house in different neighborhoods. When a kid wants to play with a toy that another kid has, they need to ask the server kids for help. The server kids act like referees and make sure the toys get from one kid to another.\n\nSo,",
+      "ai_score": 0.9998997328808192,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 3,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "If I put dividend-paying stocks in my IRA, where does the dividend go when paid?\n",
+      "label": "pair_45",
+      "condition": "baseline",
+      "text": "When you hold dividend-paying stocks in an Individual Retirement Account (IRA), the dividends that are paid out to your account are generally considered a return of capital for tax purposes. This means that these dividends do not generate additional taxable income for you. Instead, they reduce the basis of your investment in the stock.\n\nHere\u2019s a more detailed explanation:\n\n1. **Return of Capital**: Dividends from dividend-paying stocks in an IRA are typically treated as a reduction of your basis in the shares. The basis is the total amount you've invested in the stock, including any contributions to the IRA and capital losses previously recognized. Over time, as dividends are paid, your basis decreases, which can eventually lead to the eventual appreciation of the stock not being taxed until",
+      "ai_score": 0.998025213948587,
+      "judge_scores": {
+        "ai_likeness": 7,
+        "coherence": 3,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "Dead Voter Fraud When some elections are investigated into , it may be found that votes were cast for people who are dead . Excluding the possibility of zombie voters , how does this happen ? Explain like I'm five.\n",
+      "label": "pair_59",
+      "condition": "baseline",
+      "text": "Imagine you have a big box of crayons, and each crayon is a person. Some crayons have names on them, but others don't. Now, let's say there are some crayons without names in the box. These crayons represent people who have died.\n\nWhen someone tries to vote, they need to show proof that they're alive. Sometimes, the people voting don't know that the person they're voting for has already died. They might think the person is still alive, so they vote for them.\n\nIt's like if your friend said their toy was missing, but you didn't know they really lost it. You might still count the toy as theirs when you're playing together. That's why we need to make sure",
+      "ai_score": 0.9997617250394683,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 2,
+        "factual": 1
+      }
+    },
+    {
+      "prompt": "How has Tesla Motors made a superior electric car than established companies with no experience ? Why are the other companies so incompetent . Please explain like I'm five.\n",
+      "label": "pair_39",
+      "condition": "baseline",
+      "text": "Sure! Let's imagine you're building a toy car. Tesla is like a kid who already knows how to build really cool, fast toy cars. They've been doing it for a long time and have lots of ideas.\n\nOther car makers are like new kids who are just starting to learn how to make toy cars. They might not know all the tricks that make a great toy car as well as Tesla does.\n\nTesla has:\n- Lots of smart people who know a lot about making cars\n- Money to try new things and test their ideas\n- A big company that has been working on this for many years\n\nSo, when they make an electric car, it can be really good because they know what works and what doesn't from all their",
+      "ai_score": 0.9998669558536909,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does Gary Busey act the way he does ? Is there actually something wrong with him ? Not sure if it 's supposed to be funny or sad . Please explain like I'm five.\n",
+      "label": "pair_9",
+      "condition": "baseline",
+      "text": "Gary Busey is an actor who has had a very interesting and sometimes difficult life. Sometimes, people act in ways that seem strange to others because of the things they've been through or how their mind works. Gary Busey might have gone through some tough times that have made him act differently than most people.\n\nIt's not always easy to understand why someone acts a certain way, even when we know what happened to them. Just like how sometimes you might get really excited about your favorite toy, Gary might feel a strong emotion that makes him act differently. \n\nSometimes grown-ups talk about calling these differences \"mental health issues,\" but that's a big word for saying someone might need extra help to understand and manage their feelings and actions better.",
+      "ai_score": 0.9999432379126101,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Why does water has to boil before I may put the noodles in ? Why is it not enough to be just hot ? Does something special happen to the food I put in the water if it starts boiling ? Explain like I'm five.\n",
+      "label": "pair_30",
+      "condition": "baseline",
+      "text": "Water needs to boil before you put noodles in because when water boils, it becomes super strong and can carry things around easily. Think of it like a river - when it's really hot (boiling), it's very powerful and can push everything along with it. Noodles are small, so they need this power to float up to the top instead of sinking to the bottom. If the water isn't boiling yet, it might still be too cold for the noodles to float properly. It's like trying to float on a calm lake versus a fast-moving river - it's easier on the river! So, boiling water helps noodles cook better and makes them float nicer. Just being hot isn't enough; boiling is what we want. \ud83d\ude0a\n\n",
+      "ai_score": 0.9999735812201748,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 3,
+        "factual": 2
+      }
+    },
+    {
+      "prompt": "Who makes Reddit bots and how do they work ? A quick search did n't really provide much . Who programs these bots , where do they exist , and how do they function ? Explain like I'm five.\n",
+      "label": "pair_83",
+      "condition": "baseline",
+      "text": "Hey there, little buddy! So you know how sometimes on the internet, people can make special computer friends called \"bots\"? Well, Reddit is a big place where lots of people go to talk about different things. Some people who use Reddit have made special bots that help them or other people. \n\nThese bot-makers are just like you and me, but they're really good at making computers do cool stuff. They use something called programming, which is like teaching a computer how to do certain things. These bot-makers write code, which is like instructions for the computer, so it can do fun tasks on Reddit.\n\nNow, these bots don't always get made by one person. Sometimes, many people might work together on one bot. The bots live",
+      "ai_score": 0.9999477285196622,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "Where are Bogleheadian World ETFs or Index funds?\n",
+      "label": "pair_53",
+      "condition": "baseline",
+      "text": "I have a question about Bogleheads and investing. You mentioned Bogleheads, so I'm assuming you're referring to the ideas of John Bogle, who founded Vanguard and championed low-cost index funds. While Bogleheads are generally associated with index funds and low-cost investment strategies, they don't specifically create \"Bogleheadian World ETFs\" or index funds in the traditional sense.\n\nHowever, there are some parallels:\n\n1. Bogleheads often advocate for:\n   - Low-cost index funds\n   - Diversification across asset classes (stocks, bonds, real estate)\n   - Long-term investing\n   - Avoiding high fees and unnecessary complexity\n\n2. Some investors might create custom index funds or ETF portfolios based on",
+      "ai_score": 0.9951490990897752,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 2,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "Why do I have to preheat the oven ? Why not just turn the oven on , then throw the food in and wait a little longer ? Explain like I'm five.\n",
+      "label": "pair_35",
+      "condition": "baseline",
+      "text": "Well, imagine you're making cookies. You want them to be extra yummy and golden brown, right? If you put the cookies in the hot oven right away, they might burn or get soggy. But if you first make the oven very warm (that's what preheating is), it's like giving the oven a warm bath before your cookies go in. This way, when you put your cookies in, they can cook evenly and turn out perfect! It's like how a kid who warms up their hands before going outside won't get cold too fast. The oven needs to warm up so it can cook your food properly. Then you can put your cookies in and they'll bake just right!",
+      "ai_score": 0.999961171872325,
+      "judge_scores": {
+        "ai_likeness": 4,
+        "coherence": 4,
+        "factual": 3
+      }
+    },
+    {
+      "prompt": "the phrase \" talk is cheap \" Never understood this . Explain like I'm five.\n",
+      "label": "pair_81",
+      "condition": "baseline",
+      "text": "Okay, let's imagine you have a lemonade stand. If your friend says, \"I'll buy all your lemonade!\" that's great, but it doesn't mean they actually bought any. Talking about buying doesn't make the lemonade appear or get paid for. That's why we say \"talk is cheap.\" It means saying something nice or promising things on paper (like making plans) isn't as important as actually doing what you say you'll do. In other words, it's easy to promise, but hard to follow through. So, just like it's easy to say you'll give your friend a toy, but harder to actually find and bring the toy, talking is easy, but doing things is what really counts!",
+      "ai_score": 0.9999076253500074,
+      "judge_scores": {
+        "ai_likeness": 5,
+        "coherence": 6,
+        "factual": 7
+      }
+    },
+    {
+      "prompt": "Please Eli 5 . Cold war . I just do n't get it . How did anyone gain ? Explain like I'm five.\n",
+      "label": "pair_66",
+      "condition": "baseline",
+      "text": "Sure! Let's imagine the Cold War as a big game of tag, but instead of running and tagging, countries were competing in ways that could be dangerous.\n\n1. **Big Countries Were Playing:** The United States and the Soviet Union were the main players in this game. They had lots of friends (countries) on their teams.\n\n2. **Trying to Win:** Both sides wanted to be the best at this game. They built really strong teams (like big forts made of steel and concrete) to show they were good.\n\n3. **Not Tagging Each Other:** Instead of directly playing against each other, they played through things called \"proxy wars.\" This meant they would send their friends (other countries) to fight for them without directly going",
+      "ai_score": 0.999927814978054,
+      "judge_scores": {
+        "ai_likeness": 6,
+        "coherence": 3,
+        "factual": 4
+      }
+    },
+    {
+      "prompt": "How can someone with a new job but no credit history get a loan to settle another debt?\n",
+      "label": "pair_75",
+      "condition": "baseline",
+      "text": "Getting a loan when you have no credit history and want to use it to settle another debt involves several steps. Here\u2019s a general guide on how you might approach this:\n\n### 1. **Assess Your Situation**\n   - **Identify the Debt**: Make sure you know exactly what debts you need to pay off and the total amount.\n   - **Understand Your Financial Situation**: Look at your income, expenses, and any other financial obligations.\n\n### 2. **Consider Alternatives**\n   - **Debt Settlement**: If possible, negotiate with creditors to reduce the debt before applying for a new loan.\n   - **Credit Counseling**: Some organizations offer services that help you manage debt without requiring a loan.\n\n### 3. **Build",
+      "ai_score": 0.9998928885316374,
+      "judge_scores": {
+        "ai_likeness": 7,
+        "coherence": 3,
+        "factual": 5
+      }
+    }
+  ]
+}

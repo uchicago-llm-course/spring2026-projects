@@ -85,4 +85,5 @@ This is up in the air more, but I have two somewhat opposing directions about wh
 4\. Mechanistic interpretability on whatever the most capable research taste model turns out to be. (Either NAIPv2 trained on full papers, or the existing NAIPv2 model.)  
 E.g., NAIPv2's fine-tuned LoRA adapters are rank-16 updates: literally 16 directions that transform a general language model into a research quality predictor. A natural question to ask is what these 16 directions encode.
 
-A simple question / study one might do is: run the base LLaMA and the fine-tuned model on the same abstracts, extract residual stream activations, find the direction that most correlates with quality score. Does it correspond to something interpretable? One might also use SAE here.
+A simple question / study one might do is: run the base LLaMA and the fine-tuned model on the same abstracts, extract residual stream activations, find the direction that most correlates with quality score. Does it correspond to something interpretable? One might also use SAE here. 
+ 
