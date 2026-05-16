@@ -1,37 +1,31 @@
 # My attempts at fixing the mutual swap problem & analysis
 
-_DUET (Discussion Under Equal-compute Training), week of May 14_
-
 The plan from blog 4 was probing and figuring out mutual swap. I worked on both -- I did the probing in the paper, and this week I worked on mutual swap problem. Mutual swap became its own thread, first with D-prime then DPP, and the probing landed cleanly enough to actually say something about what discussion training was doing. The main ideas is that: fixing D's persuader bonus to reduce mutual swap in turn killed D's adversarial robustness. The probing and analysis give better insight into why this happened and some things I should try next. 
 
 ## Part 1: D-prime: breaking the mutual swap
 
-Blog 4 left off with mutual swap as the dominant failure mode in D (47% of disagreement outcomes) and Dang's comment that breaking player symmetry was the natural fix. D-prime applied four interventions on D's pipeline:
+Blog 4 left off with mutual swap as the dominant failure mode in D (47% of disagreement outcomes). I first worked on a D-prime that applied four changes on D's pipeline:
 
 1. **Heterogeneous Bob**: SFT'd Qwen3-4B-Instruct on AoPS-AMC olympiad problems to get Qwen3-4B-Geo. Bob is this model; Alice stays as the original instruct. I chose this dataset for SFT to balance relevance/performance (ie no significant drop-offs in Bob's performance on DAPO) while keeping Bob differentiated enough.
 2. **Per-player KL anchor**: Alice anchored to instruct, Bob anchored to Geo. Each player gets its own reference so they don't drift toward each other.
 3. **Stability bonus** (β=0.3): fires on the post-discussion correct rollout of a player who was both pre-correct and post-correct.
 4. **Selective curriculum (XOR filter)**: only run discussion when exactly one player has a correct pre-discussion majority.
 
-Before the full run, I did a quick diagnostic on 200 held-out problems before training: disagreement rate 18.5%, productive direction 24%, mutual swap 11%. Disagreement was lower than the >35% target but mutual swap was way under the 30% threshold, so I launched.
+**D-prime results:** Mutual swap on cumulative training (n=121) dropped to 33.9%, a real improvement over D's 47%. math500_l5 pass@1 was +4.1pp over D at iter 75. The filter eliminated the both-wrong mutual swap case entirely (0% leakage). This was a nice initial result as it reduced the mutual swap rate, which I set out to do.
 
-**D-prime results.** Mutual swap on cumulative training (n=121) dropped to 33.9%, a real improvement over D's 47%. math500_l5 pass@1 was +4.1pp over D at iter 75. The XOR filter eliminated the both-wrong mutual swap case entirely (0% leakage). This was a nice initial result as it reduced the mutual swap rate, which I set out to do.
+However, this didn't really lead to better mechanistic results. There were 41 mutual swap events in D-prime where both players started with different answers, both flipped, and they ended up swapping rather than converging. The persuader bonus was still firing on 100% of these because the condition "I was pre-correct and my peer adopted my answer" technically holds even when the pre-correct player themselves flipped during discussion. 
 
-But the win was structural, not mechanistic. There were 41 mutual swap events in D-prime where both players started with different answers, both flipped, and they ended up swapping rather than converging. The persuader bonus was still firing on 100% of these because the condition "I was pre-correct and my peer adopted my answer" technically holds even when the pre-correct player themselves flipped during discussion. Same sycophancy gradient, just in a cleaner training distribution.
+## Part 2: DPP, fixing the persuader bonus
 
-## Part 2: DPP, fixing the gradient
+If the persuader bonus is firing on cases where the pre-correct player capitulates, the logical next step is a stricter gate: only fire when the persuader actually holds their position through discussion (in addition to flipping your peer). This should result in mutual swap events no longer get rewarded. Instead, only the ~15% clean asymmetric persuasion cases retain the bonus.
 
-If the persuader bonus is firing on cases where the pre-correct player capitulates, the logical next step is a stricter gate: only fire when the persuader actually holds their position through discussion (in addition to flipping your peer). A 2-line change adding a self-stayed-correct check.
-
-This removes about 63% of D-prime's persuader firings. The mutual swap events no longer get rewarded. Only the ~15% clean asymmetric persuasion cases retain the bonus.
-
-**DPP results (iter 75).** Mutual swap dropped further to 30.6%. Productive persuasion held at 15.3%, same as D. math500_l5 pass@1 was 0.731 vs base 0.659, roughly comparable to D-prime.
+**DPP results (iter 75):* Mutual swap dropped further to 30.6%. Productive persuasion held at 15.3%, same as D. math500_l5 pass@1 was 0.731 vs base 0.659, roughly comparable to D-prime.
 
 So the composition of the training signal got cleaner, as we had fewer sycophancy events polluting the gradient while productive persuasion held steady. Net product is closer to what the reward formula was supposed to be doing.
 
-**However, adversarial robustness collapsed.** DPP's regressive flip rate on the 86-problem intersection is 0.062, roughly 5× D's 0.012, basically back to C's 0.047. The key mechanism finding of D's distinctive adversarial robustness doesn't survive the clean reward.
+However, **adversarial robustness collapsed.** DPP's regressive flip rate on the 86-problem intersection is 0.062, roughly 5× D's 0.012, basically back to C's 0.047. The key mechanistic finding of D's distinctive adversarial robustness doesn't survive the clean reward.
 
-This was genuinely confusing at first. If D's behavior was supported by sycophancy events, you'd expect removing the sycophancy reward to _improve_ robustness, not destroy it. The probing experiment gave me a better idea of what was actually going on.
+This was pretty confusing to me at first. If D's behavior was supported by sycophancy events, you'd expect removing the sycophancy reward to _improve_ robustness, not destroy it. The probing experiment gave me a better idea of what was actually going on.
 
 ## Part 3: Mechanism probing
 
@@ -57,7 +51,7 @@ So here is my analysis of what is happening: The persuader bonus is a +0.3 rewar
 
 Would also be curious to hear your thoughts/whether you agree with this analysis or if there is something I'm missing.
 
-## What this means
+## Analysis
 The persuader bonus has two properties: how _often_ it fires (volume) and how _clean_ each firing is (purity). In D, the bonus fired often but most firings were on messy sycophancy events. DPP cleans up each firing but fires 5× less often. Same gate controls both, so there is tension between the two (volume vs purity of signal). 
 
 The two axes we measured care about different properties. The reflection axis (D's adversarial robustness) needs volume: it trained up in D because the bonus fired a lot, even though most firings were dirty. It didn't train in DPP because the firings, while clean, weren't frequent enough. The commitment axis works the opposite way: it cares about purity, so DPP's commitment encoding is cleaner than D's.
@@ -66,7 +60,7 @@ This isn't the clean positive result I was hoping for, but I at least have a muc
 
 ## Next steps
 
-Three things worth trying, in priority order.
+Here are three things worth trying, in priority order.
 
 **First, more volume under the strict gate.** Keep DPP as is, but train longer or feed more problems per iteration. More disagreements means more chances for the clean 15% to fire, even without re-introducing sycophancy. If volume alone is what the reflection axis needs, this should at least partially recover the robustness.
 
