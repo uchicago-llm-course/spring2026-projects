@@ -38,7 +38,7 @@ Results mostly matched up - it'll be more interesting to see whether 30 prompts 
 | +17 | 0.88 |
 | +33 (most AI) | 0.97 |
 
-![Pangram steering scores - 30 prompts](/Users/joannazhang/UChicago_CS/spring2026-projects/joannazhang/steering_scores_large_sample.png)
+![Pangram steering scores - 30 prompts](steering_scores_large_sample.png)
 
 Monotonically increasing across all five conditions, and the most human-steered condition drops all the way to 0.02 — same as the original 5-prompt result from week 3, but now with much more confidence. A good sanity check on the original results.
 
