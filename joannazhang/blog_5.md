@@ -65,4 +65,4 @@ Note that these are all still run with 5 prompts, so the model size comparison w
 - Rerun model size comparison and all other experiments with 30 prompts for more reliable estimates
 - Multi-round prompting experiment on the instruct model — per earlier feedback, iteratively telling the model its output looks too AI-generated has worked on frontier models; worth testing here
 - Figure out the direction flip in the pooled/truncated dataset from last week — still unresolved, hopefully will be resolved once run with 30 prompts and so can be more confident in the results.
-- Finish the final draft, including adding an appendix with some sample steered results, the prompts, etc.
+- Finish the final draft, including adding an appendix with some sample steered results, the prompts, etc. 
