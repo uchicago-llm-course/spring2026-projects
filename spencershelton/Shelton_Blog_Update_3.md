@@ -1,0 +1,25 @@
+# Blog Post 3
+
+## Overview
+
+The project has moved from the data-generation phase into the model-building phase. The main dataset building work is done, which means the focus has shifted to implementing the actual modular transformer.
+
+At this point the remaining preprocessing is mostly transformations. I am still finalizing the token sequence generation for training, but compared to the generation run this is much smaller work (particularly the nihghtmare that was working with Fairy Stockfish) and will take far less time to run and based on prior experience with CornerCaseLM, I do not expect tokenization itself to be a major bottleneck. As a preprosssing step all positions have already been hashed allowing for the easy creation of composed games to allow for sudden rule changes part way through a game to put further pressure on the model. The main work now is getting the model architecture implemented cleanly enough that I can start the first real training run soon.
+
+## Building the model
+
+The architecture I am building is still the same general one described in the proposal: a transformer with alternating shared and piece-specific modular stages. The shared portions of the model are intended to carry general board-state and cross-piece interaction information, while the modular portions are where I want more of the piece rule specific computation to live. To support that, I am planning to keep the FFNs in the shared sections smaller than the FFNs inside the swappable piece modules. The point is to bias the model away from solving everything in the shared path and toward storing changing rule behavior in components that can later be swapped, ablated, or retrained in isolation.
+
+A major implementation task right now is building the scaffold that loads the correct piece modules during training. The important detail is that these modules are not generic experts with learned routing. Instead, the slots are fixed by piece type. There is a knight slot, bishop slot, rook slot, etc. What changes between rulesets is which module instance is loaded into that slot. Therefore the model does not have to infer from scratch what the semantic role of a slot is and the slot identity stays stable, with the loaded module determining the currently active movement rule for that piece.
+
+## Routing a move to the relevant core
+
+I am not planning to use learned token-level routing in the MoE sense, my plan is for routing to be mostly architectural. Each piece type will have a dual fixed modular designated sections of the model. During training, the scaffold will load the module for the active ruleset into that section so that if the current ruleset uses a particular bishop movement variant, the bishop slot contains the module corresponding to that bishop rule.
+
+At the sequence level, the full board and move history still pass through the shared path, but the piece-specific modular stages are built around fixed piece-linked slots whose loaded modules change with the ruleset. The point is not that the model is already explicitly routing bishop information to a bishop core in a hand-designed way. Rather, the idea is that repeated rule changes, linked to loading specific modules corresponding to a rule into stable piece-linked positions, will pressure the optimizer to organize rule-specific information in those parts of the network. In that picture, the slot provides a persistent structural location associated with a piece type rule, while the changing loaded module provides the varying rule realization. A central question of the project is whether that combination is enough to make the model actually learn a modular internal organization.
+
+This is also why I am using paired modular stages rather than only one. If a changed knight rule affects whether the best move is instead a queen move, the earlier piece module should be able to influence the shared latent state, and a later modular stage should then let downstream piece-specific decision computation respond to that updated state. The idea is the routing is not just about directly predicting bishop moves from a bishop token but about giving each piece type a stable path through which its rule-conditioned effects can enter and later re-enter the model.
+
+## Anticipated training start
+
+Assuming the remaining implementation work goes smoothly, I expect to begin training withing this week. The first runs will mostly be about checking that the architecture trains stably and that the module-loading system behaves the way it is supposed to. Before doing the full held-out adaptation experiment, I want to confirm that the model can learn under repeated rule variation at all and that ablating the module for a given piece actually hurts performance in the part of behavior that module is supposed to control. That is the first basic sanity check before the more ambitious adaptation tests.
