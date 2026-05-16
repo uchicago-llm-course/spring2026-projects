@@ -60,6 +60,9 @@ All three models have identical baselines (0.993), but steering effectiveness dr
 
 Note that these are all still run with 5 prompts, so the model size comparison will be rerun with 30 prompts as part of the broader rerun effort.
 
+## Challenges
+As mentioned, the 30-prompt rerun takes around 15 minutes per condition (and that's with the 3B), so scaling this up to cover all the experiments (model size, pooled dataset, instruct model) is going to be slow going. Rerunning everything is the plan but it'll happen gradually over the week rather than all at once. Running the 14B also crashed colab a couple times when I was running, so hopefully it doesn't do that next week when I try to steer on 30 prompts with it.
+
 ## Next Steps
 
 - Rerun model size comparison and all other experiments with 30 prompts for more reliable estimates
