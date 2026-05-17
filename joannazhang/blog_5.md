@@ -38,7 +38,7 @@ Results mostly matched up - it'll be more interesting to see whether 30 prompts 
 | +17 | 0.88 |
 | +33 (most AI) | 0.97 |
 
-![Pangram steering scores - 30 prompts](/Users/joannazhang/UChicago_CS/spring2026-projects/joannazhang/steering_scores_large_sample.png)
+![Pangram steering scores - 30 prompts](steering_scores_large_sample.png)
 
 Monotonically increasing across all five conditions, and the most human-steered condition drops all the way to 0.02 — same as the original 5-prompt result from week 3, but now with much more confidence. A good sanity check on the original results.
 
@@ -60,9 +60,12 @@ All three models have identical baselines (0.993), but steering effectiveness dr
 
 Note that these are all still run with 5 prompts, so the model size comparison will be rerun with 30 prompts as part of the broader rerun effort.
 
+## Challenges
+As mentioned, the 30-prompt rerun takes around 15 minutes per condition (and that's with the 3B), so scaling this up to cover all the experiments (model size, pooled dataset, instruct model) is going to be slow going. Rerunning everything is the plan but it'll happen gradually over the week rather than all at once. Running the 14B also crashed colab a couple times when I was running, so hopefully it doesn't do that next week when I try to steer on 30 prompts with it.
+
 ## Next Steps
 
 - Rerun model size comparison and all other experiments with 30 prompts for more reliable estimates
 - Multi-round prompting experiment on the instruct model — per earlier feedback, iteratively telling the model its output looks too AI-generated has worked on frontier models; worth testing here
 - Figure out the direction flip in the pooled/truncated dataset from last week — still unresolved, hopefully will be resolved once run with 30 prompts and so can be more confident in the results.
-- Finish the final draft, including adding an appendix with some sample steered results, the prompts, etc.
+- Finish the final draft, including adding an appendix with some sample steered results, the prompts, etc. 
